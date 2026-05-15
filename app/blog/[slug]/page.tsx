@@ -115,4 +115,4 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   // JSON-LD: Article schema
   const articleSchema = {
-    '@context': 'https://sc
+    '@context': 'https://schema.org',
