@@ -96,7 +96,6 @@ export const posts: Post[] = [
       { q: 'Can I pass Algebra 1 if I failed the first semester?', a: 'Yes — many students recover from a failing first semester and pass the course by the end of the year. The strategy requires acting immediately: talk to your teacher about recovery options, identify which specific topics you failed on, and change your study method from passive review to active problem practice. How to Win at Math is designed precisely for students who are mid-struggle and need a complete approach overhaul.' },
     ],
   },
-  },
   {
     slug: 'what-to-do-when-failing-math-class',
     title: 'What to Do When You\'re Failing Math Class: A Step-by-Step Action Plan',
@@ -145,7 +144,6 @@ export const posts: Post[] = [
       { q: 'How do I know if my math problem is gaps or study habits?', a: 'If you can do homework with help but still fail tests, the primary problem is likely study habits (passive review instead of active practice). If you feel lost even with help, the problem is more likely foundational gaps. Most failing students have both — gaps that make the content hard, and ineffective study methods that prevent them from compensating. How to Win at Math addresses both simultaneously.' },
       { q: 'Will summer school save a failing math grade?', a: 'Summer school can allow a student to retake a failed course and get credit, but it does not automatically fix the underlying problem. If a student fails a math course without changing their approach, summer school often produces the same result. The more valuable use of time is using summer school alongside a structured resource like How to Win at Math that teaches a completely different way of engaging with math.' },
     ],
-  },
   },
   {
     slug: 'how-to-pass-college-math',
@@ -431,7 +429,6 @@ export const posts: Post[] = [
       { q: 'How do I find my math gaps?', a: 'Work backward from where you are currently confused. Take a blank sheet of paper and try to solve problems from the last unit you felt confident in. If those are fine, move forward in difficulty until problems stop working. The specific topic where your reasoning breaks down is your gap — not algebra in general, but something specific like "I lose track of negative signs when distributing across parentheses." Specificity is what makes gap-filling fast.' },
     ],
   },
-  },
   {
     slug: 'how-to-overcome-math-anxiety',
     title: 'How to Overcome Math Anxiety: What Research Actually Shows Works',
@@ -481,7 +478,6 @@ export const posts: Post[] = [
       { q: 'Is math anxiety a learning disability?', a: 'No — math anxiety is a psychological and physiological response to math situations, not a learning disability. It is not dyscalculia, which is a specific difficulty with number processing. Math anxiety is fully addressable through the right combination of mindset work, study strategy, and gradual exposure — which is exactly what How to Win at Math provides for struggling students.' },
     ],
   },
-  },
   {
     slug: 'real-reason-you-freeze-on-math-tests',
     title: 'The Real Reason You Freeze Up on Math Tests (It\'s Not What You Think)',
@@ -528,7 +524,6 @@ export const posts: Post[] = [
       { q: 'Does knowing the material prevent test freeze?', a: 'Knowing the material reduces the probability of freezing but does not eliminate it for high-anxiety students. Students with strong math anxiety can freeze on material they know cold if the anxiety response is severe enough. This is why addressing the anxiety directly — through expressive writing, reappraisal, and controlled breathing — is necessary alongside content knowledge. How to Win at Math integrates both the study strategy and the anxiety management that together prevent freeze.' },
     ],
   },
-  },
   {
     slug: 'how-to-build-confidence-in-math',
     title: 'How to Build Confidence in Math (Even If You\'ve Always Struggled)',
@@ -570,7 +565,6 @@ export const posts: Post[] = [
       { q: 'Does praising students for being smart help their math confidence?', a: 'Research by Carol Dweck at Stanford shows that praising students for being smart actually undermines long-term confidence — because it makes success feel fragile ("what if the next test proves I\'m not actually smart?"). Praising effort and specific strategies is far more effective. "You worked through that problem carefully and caught your own error" builds more durable confidence than "you\'re so good at math."' },
       { q: 'How long does it take to build real confidence in math?', a: 'Most students notice a shift in their relationship with math within 3-6 weeks of consistent practice using the right method. The progress tracking step — writing down one specific thing you can do today that you could not do last week — accelerates this significantly because it makes improvement visible and documented rather than just felt. How to Win at Math integrates this into a complete confidence-building system.' },
     ],
-  },
   },
   {
     slug: 'youre-not-a-math-person-myth',
@@ -765,7 +759,6 @@ export const posts: Post[] = [
       { q: 'What is interleaved practice and why does it help?', a: 'Interleaved practice means mixing different problem types in random order during study — just like a real test presents problems. Most students practice blocked (all quadratics, then all systems), which does not train the skill of identifying which method to use. Tests require that skill. Interleaved practice is harder in the short term but produces significantly better test scores. How to Win at Math shows students how to build this into their full study system.' },
     ],
   },
-  },
   {
     slug: 'understand-math-in-class-fail-tests',
     title: 'Why You Understand Math in Class But Fail Tests — And Exactly How to Fix It',
@@ -855,7 +848,6 @@ export const posts: Post[] = [
       { q: 'What should I do right before a test to remember formulas?', a: 'Do a memory-based formula review (write them all from scratch without looking) 24-48 hours before the test, not the morning of. Then, the moment you receive the test, do a brain dump — write every formula you know on scratch paper before reading a single question. This strategy both protects you from anxiety-related forgetting and frees working memory for actual problem-solving. How to Win at Math builds these test-day techniques into a complete preparation system.' },
     ],
   },
-  },
   {
     slug: 'best-way-to-practice-math-at-home',
     title: 'The Best Way to Practice Math at Home (A 30-Minute Daily System)',
@@ -942,7 +934,6 @@ export const posts: Post[] = [
       { q: 'Does math get easier the more you practice?', a: 'Yes — with the right kind of practice. Random repetition of problems you already know does not produce much improvement. Targeted practice on your specific gaps, using retrieval practice (solving without looking at notes), produces compounding gains. Each session builds on the last, and skills that once required significant effort become automatic over weeks.' },
       { q: 'Can I get better at math at any age?', a: 'Yes. Research on neuroplasticity is clear: the brain retains the ability to form new neural connections throughout life. Adults who approach math improvement with the right method — targeted gap-filling, active practice, understanding the logic behind procedures — consistently improve at rates that surprise them. How to Win at Math works for students at any level, from middle school through college.' },
     ],
-  },
   },
   {
     slug: 'why-cramming-doesnt-work-for-math',
@@ -1077,7 +1068,6 @@ export const posts: Post[] = [
       { q: 'How do I know if my child\'s math failure is anxiety or knowledge gaps?', a: 'A reliable test: have your child solve three homework-style problems with you present and no time pressure. If they can solve them correctly in a relaxed setting but fail on tests, anxiety is likely the primary issue. If they cannot solve them even with time and support, knowledge gaps are the bigger factor. Most failing students have both — which is why the most effective interventions (like How to Win at Math) address both simultaneously.' },
     ],
   },
-  },
   {
     slug: 'how-to-help-child-with-math',
     title: 'How to Help Your Child With Math Without Doing It for Them',
@@ -1134,7 +1124,6 @@ export const posts: Post[] = [
       { q: 'What do I do when my child refuses to do math homework?', a: 'Refusal usually signals that something is wrong: the material is too hard (knowledge gap), the emotional stakes feel too high (anxiety), or the habit structure is poor (no consistent routine). Address the most likely root cause first. If the material is the barrier, identifying the specific sticking point and getting targeted help is more useful than forcing the homework. If anxiety is present, reducing the emotional charge around math at home is the priority.' },
       { q: 'How can I help my child with math at home without creating dependency?', a: 'Deliberately fade your involvement over time. Start sessions by asking your child to attempt the first few problems alone before asking for help, then gradually increase that number each week. Track progress: if your child could handle none of the homework alone in September and handles half alone in November, that is real independence development even if grades have not fully caught up yet. How to Win at Math gives students the framework to work through confusion independently.' },
     ],
-  },
   },
   {
     slug: 'signs-child-has-math-anxiety',
@@ -1464,7 +1453,6 @@ export const posts: Post[] = [
       { q: 'How do I study for Algebra 2 tests effectively?', a: 'Start test preparation four to five days before the exam, not the night before. Work problems from each topic type without looking at solutions. Focus extra time on your weakest areas. The night before: do a 20-minute review of problems you previously got wrong, then stop. Research consistently shows this distributed approach outperforms any single cramming session. How to Win at Math gives students the full system for making this work consistently.' },
     ],
   },
-  },
 
   // ─── PILLAR 4 ─────────────────────────────────────────────────────────────
   {
@@ -1576,7 +1564,6 @@ export const posts: Post[] = [
       { q: 'Is the SAT math section hard?', a: 'The SAT math section tests a relatively narrow content range, but it presents familiar concepts in unfamiliar ways under time pressure with deliberate distractors in the answer choices. Students who know the content but have not practiced the specific format and pacing often underperform their knowledge level. The solution is format-specific practice — always timed, always using official SAT materials.' },
       { q: 'What score do I need on SAT math to get into college?', a: 'Requirements vary dramatically by institution. Community colleges typically accept any SAT score. Competitive universities may expect scores of 700+ for STEM programs. The national average SAT math score is approximately 520. A score above 600 places you in roughly the top third of test-takers. Whatever your target school, research their median math SAT score for admitted students and use that as your preparation benchmark.' },
     ],
-  },
   },
 
   // ─── PILLAR 2 ─────────────────────────────────────────────────────────────
@@ -1847,7 +1834,6 @@ export const posts: Post[] = [
       { q: 'How do I convert between SAT and ACT math scores?', a: 'Both College Board and ACT publish official concordance tables that translate scores between tests. As a rough guide: a 700 on SAT math corresponds to approximately a 32-33 on the ACT math section. Most colleges accept both tests without preference, so comparing your actual practice scores on each test using the official conversion table is the most reliable way to determine which score to report.' },
       { q: 'Do colleges prefer the SAT or ACT?', a: 'The vast majority of US colleges accept both the SAT and ACT without preference. Neither test gives you an advantage with admissions offices — what matters is your score relative to the school\'s admitted student profile. Choose the test where you personally perform best, not based on which test the school is perceived to prefer.' },
     ],
-  },
   },
 
   {
