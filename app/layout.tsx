@@ -53,4 +53,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSche
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+      </head>
+      <body>
+        <header className="site-header">
+          <div className="container">
+            <a href="https://howtowinatmath.com/" className="logo" aria-label="How to Win at Math - Home">
+              How to Win at Math
+            </a>
+            <nav aria-label="Main navigation">
+              <a href="/">Blog</a>
+              <a href="https://howtowinatmath.com/" className="btn-nav">Get the Book</a>
+            </nav>
+          </div>
+        </header>
+        <main id="main-content">{children}</main>
+        <footer className="site-footer">
+          <div className="container">
+            <p>
+              <strong>How to Win at Math</strong> — The complete system for students who struggle with math.{' '}
+              <a href="https://howtowinatmath.com/">Get the book</a>
+            </p>
+            <nav aria-label="Footer navigation" className="footer-links">
+              <a href="/">Blog Home</a>
+              {' '}-{' '}
+              <a href="https://howtowinatmath.com/">Main Site</a>
+            </nav>
+          </div>
+        </footer>
+      </body>
+    </html>
+  );
+}

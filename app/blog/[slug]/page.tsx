@@ -39,7 +39,7 @@ function CtaMid() {
       <p>
         <em>{BOOK_NAME}</em> is the complete system — mindset, study approach, and test strategy — built specifically for students who feel like math just isn&rsquo;t for them. Thousands of students have used it to go from failing to passing.
       </p>
-      <a href={BOOK_URL} className="btn-cta">Get the Book →</a>
+      <a href={BOOK_URL} className="btn-cta">Get the Book</a>
     </div>
   );
 }
@@ -51,12 +51,11 @@ function CtaEnd() {
       <p>
         <em>{BOOK_NAME}</em> was written for students who&rsquo;ve tried everything and still can&rsquo;t make math click. It&rsquo;s the system thousands of students wish they had sooner.
       </p>
-      <a href={BOOK_URL} className="btn-cta">Get Your Copy at HowToWinAtMath.com →</a>
+      <a href={BOOK_URL} className="btn-cta">Get Your Copy at HowToWinAtMath.com</a>
     </div>
   );
 }
 
-// Renders paragraph text that may contain HTML anchor tags from our interlinks
 function RichText({ text }: { text: string }) {
   if (text.includes('<a ')) {
     return <p dangerouslySetInnerHTML={{ __html: text }} />;
@@ -113,6 +112,90 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const datePublished = '2025-01-01T00:00:00Z';
   const dateModified = new Date().toISOString();
 
-  // JSON-LD: Article schema
   const articleSchema = {
     '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.metaDescription,
+    url,
+    datePublished,
+    dateModified,
+    author: {
+      '@type': 'Organization',
+      name: 'How to Win at Math',
+      url: 'https://howtowinatmath.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'How to Win at Math',
+      url: 'https://howtowinatmath.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo.png`,
+      },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Blog', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: post.pillarName, item: `${SITE_URL}/#pillar-${post.pillar}` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: url },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <nav aria-label="Breadcrumb" className="breadcrumb">
+        <div className="container">
+          <a href="/">Blog</a>
+          <span aria-hidden="true"> &rsaquo; </span>
+          <a href={`/#pillar-${post.pillar}`}>{post.pillarName}</a>
+          <span aria-hidden="true"> &rsaquo; </span>
+          <span aria-current="page">{post.title}</span>
+        </div>
+      </nav>
+
+      <div className="article-header">
+        <div className="container">
+          <span className="article-pillar-tag">Pillar {post.pillar}: {post.pillarName}</span>
+          <h1>{post.title}</h1>
+        </div>
+      </div>
+
+      <article className="article-body" itemScope itemType="https://schema.org/Article">
+        <meta itemProp="headline" content={post.title} />
+        <meta itemProp="description" content={post.metaDescription} />
+        <div itemProp="articleBody">
+          {post.content.map((block, i) => renderBlock(block, i))}
+        </div>
+
+        {related.length > 0 && (
+          <div className="related-posts">
+            <h2>More From {post.pillarName}</h2>
+            <div className="related-grid">
+              {related.map((r) => (
+                <a key={r.slug} href={`/blog/${r.slug}`} className="related-card">
+                  <h3>{r.title}</h3>
+                  <p>{r.excerpt}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </article>
+    </>
+  );
+}
