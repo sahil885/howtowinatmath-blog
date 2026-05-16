@@ -8,9 +8,15 @@ export type ContentBlock =
   | { type: 'cta-end' }
   | { type: 'callout'; title: string; text: string };
 
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
 export interface Post {
   slug: string;
   title: string;
+  metaTitle?: string;       // shorter title for <title> tag / SERP (max ~55 chars)
   metaDescription: string;
   keyword: string;
   excerpt: string;
@@ -18,6 +24,7 @@ export interface Post {
   pillarName: string;
   publishOrder: number;
   content: ContentBlock[];
+  faq?: FaqItem[];          // FAQ schema items
 }
 
 export const BOOK_URL = 'https://howtowinatmath.com/';
@@ -35,6 +42,7 @@ export const posts: Post[] = [
   {
     slug: 'how-to-pass-algebra-1-high-school',
     title: 'How to Pass Algebra 1 in High School: A Complete Survival Guide',
+    metaTitle: 'How to Pass Algebra 1 in High School',
     metaDescription: 'Struggling with Algebra 1? This step-by-step survival guide shows you exactly how to pass — even if you feel completely lost right now.',
     keyword: 'how to pass algebra 1 in high school',
     excerpt: 'Algebra 1 trips up more students than almost any other high school class. Here\'s exactly what to do to pass it.',
@@ -81,10 +89,18 @@ export const posts: Post[] = [
       { type: 'callout', title: 'The Real Problem Is Usually Approach, Not Ability', text: 'Most students who fail Algebra 1 don\'t fail because they\'re bad at math. They fail because nobody taught them how to approach math systematically — how to think through problems instead of memorize steps. That\'s exactly what How to Win at Math addresses.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'How do I pass Algebra 1 if I have no idea what\'s going on?', a: 'Start by identifying exactly where you got lost — the specific topic where things stopped making sense. Most students who feel completely lost in Algebra 1 have a gap in one of three areas: fractions, negative numbers, or the logic of variables. Once you find the real break point and fill it, the material becomes much more accessible. How to Win at Math provides a complete system for diagnosing gaps and rebuilding from the right starting point.' },
+      { q: 'What happens if I fail Algebra 1?', a: 'In most schools, failing Algebra 1 means retaking the class, either in summer school or the following year. This delays your math progression but is not permanent — many students who fail Algebra 1 the first time pass it on the second attempt and go on to complete higher math successfully. The key is identifying what went wrong and approaching it differently the second time.' },
+      { q: 'What are the most important topics in Algebra 1?', a: 'The highest-yield topics for Algebra 1 tests are: solving linear equations (including multi-step), graphing lines in slope-intercept form, systems of equations, factoring polynomials, and working with exponents. These areas appear on virtually every test and the final exam. Mastering them first gives you the best return on study time.' },
+      { q: 'Can I pass Algebra 1 if I failed the first semester?', a: 'Yes — many students recover from a failing first semester and pass the course by the end of the year. The strategy requires acting immediately: talk to your teacher about recovery options, identify which specific topics you failed on, and change your study method from passive review to active problem practice. How to Win at Math is designed precisely for students who are mid-struggle and need a complete approach overhaul.' },
+    ],
+  },
   },
   {
     slug: 'what-to-do-when-failing-math-class',
     title: 'What to Do When You\'re Failing Math Class: A Step-by-Step Action Plan',
+    metaTitle: 'What to Do When You\'re Failing Math Class',
     metaDescription: 'Failing math class right now? Don\'t panic. Here\'s a specific step-by-step action plan to turn your grade around before it\'s too late.',
     keyword: 'what to do when failing math class',
     excerpt: 'Getting an F in math doesn\'t mean it\'s over. Here\'s exactly what to do right now to turn it around.',
@@ -122,10 +138,19 @@ export const posts: Post[] = [
       { type: 'callout', title: 'One Semester Is Not Your Whole Story', text: 'Students fail math classes and go on to pass calculus. Students fail math in 9th grade and graduate with strong math skills. A failing grade is a signal that something needs to change — not a verdict about what you\'re capable of. Start with the steps above.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'Is it possible to go from failing to passing math in one semester?', a: 'Yes, and it happens regularly — but only when students change both what they do and how they study, not just how hard they try. The critical actions are talking to the teacher immediately, filling missing assignments, identifying the root conceptual gaps, and switching to active problem-practice instead of passive review. How to Win at Math gives struggling students a complete framework to make this shift effectively.' },
+      { q: 'What should I do first if I\'m failing math right now?', a: 'The first step is getting specific information: log into your grade portal and identify exactly what is dragging your grade down — missing assignments, failed tests, or both. Then contact your teacher that same day to ask about recovery options. Acting within 24 hours makes a measurable difference because the window for grade recovery is real but finite.' },
+      { q: 'Can a student recover from multiple failed tests in math?', a: 'Yes, particularly if the final exam carries significant weight (often 20-30% of the course grade) and if test correction opportunities are still available. A strong finish on the final can move a grade by a full letter or more. The key is implementing better study methods — specifically closed-note practice testing — not just reviewing the same material the same way.' },
+      { q: 'How do I know if my math problem is gaps or study habits?', a: 'If you can do homework with help but still fail tests, the primary problem is likely study habits (passive review instead of active practice). If you feel lost even with help, the problem is more likely foundational gaps. Most failing students have both — gaps that make the content hard, and ineffective study methods that prevent them from compensating. How to Win at Math addresses both simultaneously.' },
+      { q: 'Will summer school save a failing math grade?', a: 'Summer school can allow a student to retake a failed course and get credit, but it does not automatically fix the underlying problem. If a student fails a math course without changing their approach, summer school often produces the same result. The more valuable use of time is using summer school alongside a structured resource like How to Win at Math that teaches a completely different way of engaging with math.' },
+    ],
+  },
   },
   {
     slug: 'how-to-pass-college-math',
     title: 'How to Pass College Math Class (Even If You\'ve Failed Before)',
+    metaTitle: 'How to Pass College Math Class',
     metaDescription: 'College math fails 40-60% of students every semester. Here\'s what the students who pass do differently — a complete guide to surviving college math.',
     keyword: 'how to pass college math class',
     excerpt: 'College math has a shockingly high failure rate. Here\'s what the students who pass consistently do differently.',
@@ -204,6 +229,7 @@ export const posts: Post[] = [
   {
     slug: 'how-to-raise-math-grade-fast',
     title: 'How to Raise Your Math Grade Fast: 7 Things That Actually Work',
+    metaTitle: 'How to Raise Your Math Grade Fast',
     metaDescription: 'Need to raise your math grade before it\'s too late? These 7 specific strategies move grades the fastest — without tutors or miracles required.',
     keyword: 'how to raise your math grade fast',
     excerpt: 'Seven proven ways to raise a math grade fast — starting today, before the semester ends.',
@@ -279,6 +305,7 @@ export const posts: Post[] = [
   {
     slug: 'how-to-pass-geometry',
     title: 'How to Pass Geometry When You Have No Idea What\'s Going On',
+    metaTitle: 'How to Pass Geometry When You\'re Lost',
     metaDescription: 'Geometry feels completely different from algebra — and that trips up most students. Here\'s how to understand it and pass, even if you feel totally lost.',
     keyword: 'how to pass geometry class',
     excerpt: 'Geometry feels like a completely different subject from algebra — because it kind of is. Here\'s how to navigate it.',
@@ -320,6 +347,7 @@ export const posts: Post[] = [
   {
     slug: 'how-to-pass-precalculus',
     title: 'How to Pass Pre-Calculus: What No One Actually Tells You',
+    metaTitle: 'How to Pass Pre-Calculus: What No One Tells You',
     metaDescription: 'Pre-calculus is a major difficulty jump that blindsides most students. Here\'s what you actually need to know — and do — to get through it.',
     keyword: 'how to pass pre calculus',
     excerpt: 'Pre-calc is a significant step up from algebra and geometry. Here\'s what it takes to actually pass it.',
@@ -359,6 +387,7 @@ export const posts: Post[] = [
   {
     slug: 'why-youre-not-bad-at-math',
     title: 'Why You\'re Not Bad at Math — You Were Just Taught Wrong',
+    metaTitle: 'Why You\'re Not Bad at Math — You Were Taught Wrong',
     metaDescription: 'If you\'ve believed you\'re bad at math for years, this changes everything. The real reason most people struggle has nothing to do with intelligence.',
     keyword: 'why am I so bad at math',
     excerpt: 'The belief that you\'re "bad at math" is almost certainly wrong. Here\'s where it came from — and exactly how to undo it.',
@@ -395,10 +424,18 @@ export const posts: Post[] = [
       { type: 'callout', title: 'The "Math Person" Myth in One Sentence', text: 'Stanford mathematics education researcher Jo Boaler has spent decades showing that math ability is far more malleable than most people believe — and that the single biggest obstacle to math learning is the fixed belief that ability cannot change. The belief is the barrier.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'Is being bad at math genetic?', a: 'Research does not support the idea that mathematical difficulty is primarily genetic. Twin studies show small genetic contributions to certain spatial reasoning skills, but the majority of variance in math performance is explained by instruction quality, practice, and belief about ability. Countries like Singapore and Japan produce dramatically stronger math performers not through genetic differences but through cultural and pedagogical ones.' },
+      { q: 'Why do some people find math so much easier than others?', a: 'The biggest factor is usually early mathematical exposure — children who grew up in homes where numbers, patterns, and reasoning were part of everyday life arrive at school with a 2-3 year head start. This creates an advantage gap that looks like innate ability but is actually an experience gap. With targeted practice and the right approach, this gap is closeable at any age. How to Win at Math was written specifically to give students the framework they missed.' },
+      { q: 'Can someone who has always been bad at math actually get good at it?', a: 'Yes — the research on this is consistent. Students who have struggled with math for years routinely achieve competency when they change both their study method and their belief about their own potential. The key shift is from passive review (which builds familiarity) to active retrieval practice (which builds actual skill). Most students discover that they were not bad at math — they were using the wrong approach.' },
+      { q: 'How do I find my math gaps?', a: 'Work backward from where you are currently confused. Take a blank sheet of paper and try to solve problems from the last unit you felt confident in. If those are fine, move forward in difficulty until problems stop working. The specific topic where your reasoning breaks down is your gap — not algebra in general, but something specific like "I lose track of negative signs when distributing across parentheses." Specificity is what makes gap-filling fast.' },
+    ],
+  },
   },
   {
     slug: 'how-to-overcome-math-anxiety',
     title: 'How to Overcome Math Anxiety: What Research Actually Shows Works',
+    metaTitle: 'How to Overcome Math Anxiety: What Actually Works',
     metaDescription: 'Math anxiety is real, measurable, and affects 1 in 5 students. Here\'s what the science says actually works to overcome it — not just cope with it.',
     keyword: 'how to overcome fear of math',
     excerpt: 'Math anxiety isn\'t just stress — it\'s a documented psychological response. Here\'s what research shows actually fixes it.',
@@ -436,10 +473,19 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'Math anxiety hijacks working memory — that\'s why you blank on tests. Fight it with: expressive writing before tests, graduated practice starting with easy problems, reframing anxiety as excitement, and active preparation that makes the test feel familiar.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'How long does it take to overcome math anxiety?', a: 'Most students see meaningful improvement in 4-6 weeks with consistent practice using the right strategies. The key is addressing the anxiety directly alongside the math content — not just hoping it goes away with more practice. A structured system like How to Win at Math gives you both the mindset tools and study strategies working together.' },
+      { q: 'Can math anxiety be cured completely?', a: 'For most students, math anxiety does not need to be "cured" — it needs to be managed well enough that it stops interfering with performance. Research shows that specific strategies like expressive writing, graduated exposure, and reframing anxiety as excitement significantly reduce anxiety over time. Many students with severe math anxiety become confident math performers by following a systematic approach.' },
+      { q: 'Does math anxiety affect test scores?', a: 'Yes — research shows math anxiety directly reduces performance by consuming working memory, the same cognitive resource needed to solve problems. Students with high math anxiety consistently score below their actual knowledge level on tests. Addressing the anxiety directly, not just studying more content, is what actually closes the performance gap.' },
+      { q: 'What is the fastest way to reduce math anxiety before a test?', a: 'The single fastest intervention backed by research is expressive writing for 10 minutes before the test — writing freely about your worries and fears. Studies from the University of Chicago showed this produced score improvements equivalent to a full letter grade for high-anxiety students. Combined with controlled breathing (4 counts in, hold 4, out 4), most students experience noticeable relief within minutes.' },
+      { q: 'Is math anxiety a learning disability?', a: 'No — math anxiety is a psychological and physiological response to math situations, not a learning disability. It is not dyscalculia, which is a specific difficulty with number processing. Math anxiety is fully addressable through the right combination of mindset work, study strategy, and gradual exposure — which is exactly what How to Win at Math provides for struggling students.' },
+    ],
+  },
   },
   {
     slug: 'real-reason-you-freeze-on-math-tests',
     title: 'The Real Reason You Freeze Up on Math Tests (It\'s Not What You Think)',
+    metaTitle: 'The Real Reason You Freeze Up on Math Tests',
     metaDescription: 'If your mind goes blank on math tests despite understanding the material, here\'s the actual cognitive reason — and specific techniques that fix it.',
     keyword: 'how to not freeze up during a math test',
     excerpt: 'Blanking on math tests when you know the material is a cognitive problem with a cognitive solution. Here\'s what\'s happening and how to fix it.',
@@ -475,10 +521,18 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'Freezing on tests is caused by anxiety consuming working memory and a mismatch between study and test conditions. Fix it with: brain dumps at test start, closed-note practice before tests, easiest-first strategy, 60-second skip rule, and controlled breathing when the freeze starts.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'Why do I go blank on math tests even when I studied?', a: 'The most common cause is that anxiety is consuming your working memory — the mental scratchpad where you hold and manipulate information while solving problems. When anxiety activates, it competes directly with the cognitive resources math requires. This is why students who understand material at home go blank in test conditions. It is not a knowledge problem — it is a physiological interference problem with a specific set of solutions.' },
+      { q: 'How do I stop freezing up on math tests?', a: 'The most effective immediate technique is the brain dump: the moment you receive your test, write every formula and rule you know on scratch paper before reading a single question. This offloads information from working memory and breaks the freeze by getting you moving and producing. Combined with starting with the easiest problems first and using the 60-second skip rule, most students see immediate improvement. How to Win at Math teaches these techniques as part of a complete test-taking system.' },
+      { q: 'What causes test anxiety in math specifically?', a: 'Math test anxiety is caused by a combination of the working memory hijack (anxiety consuming cognitive resources), a mismatch between study conditions (comfortable, notes open) and test conditions (closed-note, timed), and a history of negative test experiences that the brain has learned to treat as threats. All three mechanisms are addressable — the working memory issue through better preparation and technique, the environment mismatch through deliberate practice under test conditions, and the history through gradual positive experiences.' },
+      { q: 'Does knowing the material prevent test freeze?', a: 'Knowing the material reduces the probability of freezing but does not eliminate it for high-anxiety students. Students with strong math anxiety can freeze on material they know cold if the anxiety response is severe enough. This is why addressing the anxiety directly — through expressive writing, reappraisal, and controlled breathing — is necessary alongside content knowledge. How to Win at Math integrates both the study strategy and the anxiety management that together prevent freeze.' },
+    ],
+  },
   },
   {
     slug: 'how-to-build-confidence-in-math',
     title: 'How to Build Confidence in Math (Even If You\'ve Always Struggled)',
+    metaTitle: 'How to Build Confidence in Math',
     metaDescription: 'Math confidence isn\'t something you\'re born with — it\'s something you build through a specific sequence of experiences. Here\'s exactly how.',
     keyword: 'how to build confidence in math',
     excerpt: 'Math confidence is built through a specific process, not luck or talent. Here\'s how to start building it today.',
@@ -510,10 +564,18 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'Confidence is built from: doing hard problems and succeeding (not being told you\'re smart), working at the edge of your ability, tracking wins explicitly, and replacing identity statements with specific problems you can fix. Confidence is a skill that develops — not a trait you have or don\'t.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'How do I build math confidence when I keep failing?', a: 'The key is deliberately engineering success at the right difficulty level — not too easy, not impossible. Find the level where you can get 70-80% of problems right with real effort, then work there until your success rate rises to 90%+. Each successful problem is a small deposit in your confidence account. How to Win at Math gives you a systematic way to find this level and build from it.' },
+      { q: 'Why do some students seem naturally confident in math?', a: 'Students who appear naturally confident in math usually have accumulated more positive experiences with math — either through early success, supportive teaching, or the lucky accident of not encountering a confusing teacher at a critical moment. Confidence follows success. By deliberately creating more success experiences through targeted practice, you can build the same confidence that appears natural in others.' },
+      { q: 'Does praising students for being smart help their math confidence?', a: 'Research by Carol Dweck at Stanford shows that praising students for being smart actually undermines long-term confidence — because it makes success feel fragile ("what if the next test proves I\'m not actually smart?"). Praising effort and specific strategies is far more effective. "You worked through that problem carefully and caught your own error" builds more durable confidence than "you\'re so good at math."' },
+      { q: 'How long does it take to build real confidence in math?', a: 'Most students notice a shift in their relationship with math within 3-6 weeks of consistent practice using the right method. The progress tracking step — writing down one specific thing you can do today that you could not do last week — accelerates this significantly because it makes improvement visible and documented rather than just felt. How to Win at Math integrates this into a complete confidence-building system.' },
+    ],
+  },
   },
   {
     slug: 'youre-not-a-math-person-myth',
     title: 'Why Saying "I\'m Not a Math Person" Is Actively Hurting Your Grade',
+    metaTitle: '"I\'m Not a Math Person" Is Hurting Your Grade',
     metaDescription: 'The "I\'m not a math person" belief feels true — but research shows it actively makes your performance worse. Here\'s the science and how to change it.',
     keyword: 'math is not for me',
     excerpt: 'The belief that you\'re not a math person doesn\'t just feel bad — it actively holds you back from learning math. Here\'s the proof.',
@@ -549,6 +611,7 @@ export const posts: Post[] = [
   {
     slug: 'math-anxiety-adults',
     title: 'Math Anxiety in Adults: Why It Persists — and How to Finally Fix It',
+    metaTitle: 'Math Anxiety in Adults: Why It Persists and How to Fix It',
     metaDescription: 'Adult math anxiety is extremely common and keeps millions from opportunities. Here\'s why it develops, why it sticks, and what actually works to fix it.',
     keyword: 'math anxiety in adults how to overcome',
     excerpt: 'Millions of adults carry math anxiety that formed in school. Here\'s why it persists — and what research shows actually resolves it.',
@@ -586,6 +649,7 @@ export const posts: Post[] = [
   {
     slug: 'i-used-to-hate-math-heres-what-changed',
     title: 'I Used to Hate Math. Here\'s What Actually Changed Everything.',
+    metaTitle: 'I Used to Hate Math — Here\'s What Actually Changed',
     metaDescription: 'Hating math usually means you never actually understood it. Here\'s the real turning point — and how to find it for yourself, at any level.',
     keyword: 'how to love math when you hate it',
     excerpt: 'Hating math is almost always a symptom of not understanding it. Here\'s what the turning point looks like — and how to find yours.',
@@ -657,6 +721,7 @@ export const posts: Post[] = [
   {
     slug: 'how-to-study-for-math-test',
     title: 'How to Study for a Math Test the Right Way (Most Students Get This Wrong)',
+    metaTitle: 'How to Study for a Math Test the Right Way',
     metaDescription: 'Re-reading notes doesn\'t work for math tests. Here\'s the research-backed method that actually builds test performance — not just familiarity.',
     keyword: 'how to study for a math test',
     excerpt: 'Most students study for math tests the wrong way. Here\'s the right method — backed by learning science.',
@@ -692,10 +757,19 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'Effective math test study = retrieval practice (closed-note problem solving) + spaced across multiple days + interleaved problem types. Replace: re-reading notes, watching videos the night before, and blocked practice on one topic at a time.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'How many days before a math test should I start studying?', a: 'Ideally, start at least four to five days before any significant math test. This allows you to do multiple shorter sessions (spaced practice), which research consistently shows produces better retention than a single long session. If you only have one day, focus entirely on working problems from scratch — closed-note — not reviewing notes or watching videos.' },
+      { q: 'Why does re-reading math notes not help on tests?', a: 'Re-reading notes builds recognition — the feeling of familiarity with material. But math tests require recall — producing solutions from scratch under pressure. These are different cognitive tasks. Recognition is easy; recall is hard. Students who study only through re-reading are training one skill while the test measures another. Active problem-solving practice is the only method that trains recall. How to Win at Math teaches students to make this switch completely.' },
+      { q: 'Is doing practice problems really better than reviewing examples?', a: 'Yes — dramatically so. Research from cognitive science shows that retrieval practice (working problems from scratch) produces 50-100% better long-term retention than re-studying the same material. The discomfort of getting things wrong during practice is not a sign that the method is failing — it is the mechanism of learning. Students who work problems and get some wrong during practice perform better on tests than students who get everything right while reviewing.' },
+      { q: 'How do I study for a math test the night before?', a: 'The night before a math test, keep it light: write out your key formulas from memory (without looking), work through 10-15 problems you are confident about to activate math thinking, and review any corrections from earlier practice sessions. Do not try to learn new material or do long study sessions the night before — sleep is more valuable than late-night cramming and directly consolidates what you have already learned.' },
+      { q: 'What is interleaved practice and why does it help?', a: 'Interleaved practice means mixing different problem types in random order during study — just like a real test presents problems. Most students practice blocked (all quadratics, then all systems), which does not train the skill of identifying which method to use. Tests require that skill. Interleaved practice is harder in the short term but produces significantly better test scores. How to Win at Math shows students how to build this into their full study system.' },
+    ],
+  },
   },
   {
     slug: 'understand-math-in-class-fail-tests',
     title: 'Why You Understand Math in Class But Fail Tests — And Exactly How to Fix It',
+    metaTitle: 'Why You Understand Math in Class But Fail Tests',
     metaDescription: 'Following along in class but going blank on tests? This is a specific problem with a specific name and a specific fix. Here\'s everything you need to know.',
     keyword: 'why do I understand math in class but fail tests',
     excerpt: 'Understanding math in class but failing tests is one of the most common — and most fixable — math problems. Here\'s the full explanation.',
@@ -735,6 +809,7 @@ export const posts: Post[] = [
   {
     slug: 'how-to-remember-math-formulas',
     title: 'How to Remember Math Formulas (Without Rote Memorization)',
+    metaTitle: 'How to Remember Math Formulas Without Rote Memorization',
     metaDescription: 'Rote-memorized formulas fail under pressure. Understanding them makes them stick permanently. Here\'s how to make every math formula actually stay.',
     keyword: 'how to remember math formulas',
     excerpt: 'Rote memorization fails under test pressure. Understanding formulas keeps them accessible even when you\'re stressed. Here\'s how.',
@@ -773,10 +848,18 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'Memorized formulas fail under stress. Understanding formulas — knowing where they come from — provides durable access even when you\'re anxious. Reinforce with: retrieval practice (write from memory, not copying), connection to solved problems, and spaced repetition over days and weeks.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'Why can\'t I remember math formulas on tests even though I studied them?', a: 'Rote memorization is fragile under stress because stress hormones disrupt the hippocampal retrieval system your brain uses to pull memorized facts from long-term memory. Understanding where a formula comes from — the logic that produces it — uses a different and more robust memory system that stress affects far less. The quadratic formula memorized as a string of symbols disappears under pressure; the quadratic formula understood as the result of completing the square is reconstructible even when you\'re anxious.' },
+      { q: 'What is the best way to memorize math formulas?', a: 'The most effective approach is understanding derivation (knowing where the formula comes from), followed by retrieval practice (writing the formula from memory without looking). Write formulas from memory today, check for gaps, then repeat in two days, five days, and ten days. Each successful retrieval strengthens the memory more than any amount of re-reading. How to Win at Math teaches students to apply this approach as part of a complete study system.' },
+      { q: 'How many math formulas do I need to memorize for a typical test?', a: 'For most high school and college math tests, you need 10-30 key formulas depending on the topic. The trick is organizing them by concept family — area formulas together, trig identities together, logarithm properties together — rather than as an undifferentiated list. When you know one member of a family deeply, related formulas become extensions rather than separate memorization tasks, cutting the effective memory load significantly.' },
+      { q: 'What should I do right before a test to remember formulas?', a: 'Do a memory-based formula review (write them all from scratch without looking) 24-48 hours before the test, not the morning of. Then, the moment you receive the test, do a brain dump — write every formula you know on scratch paper before reading a single question. This strategy both protects you from anxiety-related forgetting and frees working memory for actual problem-solving. How to Win at Math builds these test-day techniques into a complete preparation system.' },
+    ],
+  },
   },
   {
     slug: 'best-way-to-practice-math-at-home',
     title: 'The Best Way to Practice Math at Home (A 30-Minute Daily System)',
+    metaTitle: 'The Best Way to Practice Math at Home Daily',
     metaDescription: 'Daily math practice beats marathon cramming sessions every time. Here\'s a 30-minute daily system that actually builds lasting math skill.',
     keyword: 'how to practice math at home',
     excerpt: 'Consistent daily practice beats cramming every time. Here\'s a structured 30-minute daily system that builds real math ability.',
@@ -853,10 +936,18 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'To improve at math fast: (1) find specific gaps, don\'t broadly review, (2) switch to active problem-solving practice, (3) understand why procedures work, (4) practice daily even briefly, (5) use interleaved practice before tests. Expect measurable improvement in 3-4 weeks, meaningful grade change in 6-8.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'How fast can I realistically get better at math?', a: 'Most students see measurable improvement in test scores within 3-4 weeks of using the right methods consistently — specifically, daily active practice instead of passive review. A meaningful grade change (moving up a letter grade) typically takes 6-8 weeks of consistent effort. Students with larger foundational gaps may take longer, but almost everyone improves faster than they expect once they fix the method.' },
+      { q: 'What is the single fastest change I can make to get better at math?', a: 'Switching from passive study (re-reading notes, watching videos) to active practice (working problems from scratch with notes closed) is the highest-leverage single change. Research consistently shows this switch produces better test performance within one to two test cycles. How to Win at Math builds this method into a complete daily system that students can implement immediately.' },
+      { q: 'Does math get easier the more you practice?', a: 'Yes — with the right kind of practice. Random repetition of problems you already know does not produce much improvement. Targeted practice on your specific gaps, using retrieval practice (solving without looking at notes), produces compounding gains. Each session builds on the last, and skills that once required significant effort become automatic over weeks.' },
+      { q: 'Can I get better at math at any age?', a: 'Yes. Research on neuroplasticity is clear: the brain retains the ability to form new neural connections throughout life. Adults who approach math improvement with the right method — targeted gap-filling, active practice, understanding the logic behind procedures — consistently improve at rates that surprise them. How to Win at Math works for students at any level, from middle school through college.' },
+    ],
+  },
   },
   {
     slug: 'why-cramming-doesnt-work-for-math',
     title: 'Why Cramming Doesn\'t Work for Math (And What to Do Instead)',
+    metaTitle: 'Why Cramming Doesn\'t Work for Math',
     metaDescription: 'Cramming works okay for some subjects. For math, it actively hurts your performance. Here\'s the science — and the week-before plan that actually works.',
     keyword: 'how to study math effectively',
     excerpt: 'Math is one of the only subjects where cramming is almost guaranteed to fail — and often makes things worse. Here\'s why and what to do instead.',
@@ -893,6 +984,7 @@ export const posts: Post[] = [
   {
     slug: 'how-to-improve-math-skills-as-adult',
     title: 'How to Improve Your Math Skills as an Adult (Without Going Back to School)',
+    metaTitle: 'How to Improve Your Math Skills as an Adult',
     metaDescription: 'Adults can absolutely improve at math — but the approach that works is different from classroom learning. Here\'s the method that gets real results for adults.',
     keyword: 'how to improve math skills as an adult',
     excerpt: 'Improving at math as an adult requires a different approach than school-style learning. Here\'s what actually works.',
@@ -931,6 +1023,7 @@ export const posts: Post[] = [
   {
     slug: 'my-child-is-failing-math',
     title: 'My Child Is Failing Math: 7 Steps to Actually Turn It Around',
+    metaTitle: 'My Child Is Failing Math: 7 Steps to Turn It Around',
     metaDescription: 'If your child is failing math, panic and lectures won\'t help. Here are 7 specific steps that actually move the needle — a real action plan for parents.',
     keyword: 'my child is failing math what should I do',
     excerpt: 'A child failing math is stressful for any parent. Here\'s the specific action plan that actually works — no panic required.',
@@ -976,10 +1069,19 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'The parent action plan for a failing math student: get specific data first, talk to the teacher, ask your child open questions before assuming the cause, identify whether it\'s gaps/habits/anxiety, fix the study method, choose the right support resource, and watch what you model about math at home.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'What should I do if my child is failing math?', a: 'Start by getting specific data — log into the grade portal and look at every entry to understand whether the problem is missing assignments, failed tests, or both. Then contact the math teacher this week, not eventually. These two steps alone often reveal the real root cause and open recovery options that most parents don\'t know exist. How to Win at Math can help your child rebuild both the study skills and the mindset that are likely contributing to the failure.' },
+      { q: 'Should I hire a math tutor if my child is failing?', a: 'Tutoring can help, but it is not always the right first step. If the problem is primarily foundational gaps, a tutor who addresses those gaps directly is valuable. If the problem is study habits or math anxiety, tutoring alone will not fix it — the issue is approach, not just content. A structured resource like How to Win at Math addresses all three root causes (gaps, habits, and mindset) in an integrated way and can be used alongside tutoring for maximum effect.' },
+      { q: 'How can I help my child with math without doing it for them?', a: 'The most helpful thing you can do is ask questions instead of explaining answers. "What does the problem ask you to find?" and "What do you already know?" push your child to do the thinking without doing it for them. Your goal is to keep the cognitive effort on their side — because that effort is what builds the skill. See our guide on how to help your child with math for the full approach.' },
+      { q: 'Is my child failing math because they\'re not smart enough?', a: 'Almost certainly not. The overwhelming majority of children who fail math do so because of foundational gaps, ineffective study habits, or math anxiety — not because of fixed intellectual limits. These are all solvable problems. Research consistently shows that math ability is highly responsive to the right instruction and practice. How to Win at Math was written specifically for students whose families were told they just "aren\'t math people."' },
+      { q: 'How do I know if my child\'s math failure is anxiety or knowledge gaps?', a: 'A reliable test: have your child solve three homework-style problems with you present and no time pressure. If they can solve them correctly in a relaxed setting but fail on tests, anxiety is likely the primary issue. If they cannot solve them even with time and support, knowledge gaps are the bigger factor. Most failing students have both — which is why the most effective interventions (like How to Win at Math) address both simultaneously.' },
+    ],
+  },
   },
   {
     slug: 'how-to-help-child-with-math',
     title: 'How to Help Your Child With Math Without Doing It for Them',
+    metaTitle: 'How to Help Your Child With Math',
     metaDescription: 'Helping with math homework is tricky — too much help and they don\'t learn, too little and they give up. Here\'s how to support without taking over.',
     keyword: 'how to help a child struggling with math',
     excerpt: 'The balance between helping and doing-it-for-them is genuinely hard. Here\'s how to get it right in practice.',
@@ -1026,10 +1128,18 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'Effective math help keeps the thinking with your child: use questions not explanations, let them find their own errors, connect abstract concepts to real things they care about, stop before frustration overwhelms learning, and gradually build independence rather than reliance.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'How do I help my child with math when I don\'t remember the math myself?', a: 'You do not need to know the math to be a useful homework helper. Ask questions: "What does the problem say?" "What are you trying to find?" "What have you already tried?" These push your child to think through the problem without you providing the answer. For content they genuinely cannot access, Khan Academy and YouTube (searching the specific topic name) can provide explanations quickly. Your role is thinking partner, not math teacher.' },
+      { q: 'Is it bad to help your child too much with math homework?', a: 'Yes — if "help" means doing the thinking for them. The cognitive effort of struggling with a problem, getting it wrong, and figuring out why is exactly what builds mathematical skill. When you solve the problem for your child, you have done their homework but they have not. Over time, this creates dependence rather than independence. How to Win at Math gives students the tools to work through confusion independently, which is ultimately what helps them most.' },
+      { q: 'What do I do when my child refuses to do math homework?', a: 'Refusal usually signals that something is wrong: the material is too hard (knowledge gap), the emotional stakes feel too high (anxiety), or the habit structure is poor (no consistent routine). Address the most likely root cause first. If the material is the barrier, identifying the specific sticking point and getting targeted help is more useful than forcing the homework. If anxiety is present, reducing the emotional charge around math at home is the priority.' },
+      { q: 'How can I help my child with math at home without creating dependency?', a: 'Deliberately fade your involvement over time. Start sessions by asking your child to attempt the first few problems alone before asking for help, then gradually increase that number each week. Track progress: if your child could handle none of the homework alone in September and handles half alone in November, that is real independence development even if grades have not fully caught up yet. How to Win at Math gives students the framework to work through confusion independently.' },
+    ],
+  },
   },
   {
     slug: 'signs-child-has-math-anxiety',
     title: 'Signs Your Child Has Math Anxiety (And What Parents Can Do About It)',
+    metaTitle: 'Signs Your Child Has Math Anxiety',
     metaDescription: 'Math anxiety affects 1 in 5 children and is easy to miss or misread. Here\'s how to spot it — and what research shows parents can do to help.',
     keyword: 'signs your child has math anxiety',
     excerpt: 'Math anxiety shows up in specific recognizable patterns. Here\'s how to spot them — and what actually helps.',
@@ -1084,6 +1194,7 @@ export const posts: Post[] = [
   {
     slug: 'best-math-books-struggling-students',
     title: 'Best Math Books for Struggling Students in 2026 (An Honest Ranking)',
+    metaTitle: 'Best Math Books for Struggling Students in 2026',
     metaDescription: 'Looking for a math book that actually helps struggling students? Here\'s an honest, detailed ranking of what works — and what to avoid.',
     keyword: 'best math book for struggling students',
     excerpt: 'Not all math books are created equal. Here\'s what actually helps students who are genuinely struggling — and how to choose.',
@@ -1130,6 +1241,7 @@ export const posts: Post[] = [
   {
     slug: 'math-tutor-vs-math-book',
     title: 'Math Tutor vs. Math Book: Which Is Actually Better for Your Child?',
+    metaTitle: 'Math Tutor vs. Math Book: Which Is Better?',
     metaDescription: 'Tutoring or a book — which is the right call for a struggling math student? Here\'s an honest comparison of cost, effectiveness, and when each makes sense.',
     keyword: 'should I get a math tutor or a book',
     excerpt: 'Tutors and books solve different problems. Here\'s an honest comparison so you can make the right call for your child.',
@@ -1181,6 +1293,7 @@ export const posts: Post[] = [
   {
     slug: 'khan-academy-vs-math-book',
     title: 'Khan Academy vs. a Structured Math Book: An Honest Comparison',
+    metaTitle: 'Khan Academy vs. a Structured Math Book',
     metaDescription: 'Khan Academy is free and comprehensive — but is it enough for struggling students? Here\'s an honest look at what it does and doesn\'t do, and when a book is better.',
     keyword: 'Khan Academy vs book for math learning',
     excerpt: 'Khan Academy is excellent for some things. Here\'s an honest look at where it falls short for struggling students — and what fills those gaps.',
@@ -1228,6 +1341,7 @@ export const posts: Post[] = [
   {
     slug: 'math-resources-struggling-students',
     title: 'Best Math Resources for Struggling Students: What Parents Need to Know',
+    metaTitle: 'Best Math Resources for Struggling Students',
     metaDescription: 'The internet has more math resources than ever — but most don\'t help struggling students. Here\'s an honest guide to what actually works and why.',
     keyword: 'math resources for struggling students',
     excerpt: 'More math resources exist than ever before. Here\'s what actually helps struggling students — and why most don\'t.',
@@ -1343,12 +1457,20 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'Algebra 2 difficulty comes from abstraction and pace — not from the material being impossible. Fix Algebra 1 gaps first, master function concepts as the organizing principle, treat logarithms and complex numbers as new number systems (not just rule sets), and study by working problems (not reviewing notes). Consistent daily practice beats pre-test cramming every time.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'Why is Algebra 2 so much harder than Algebra 1?', a: 'Algebra 2 introduces a fundamental shift — from solving specific equations to analyzing how entire function families behave. The level of abstraction jumps significantly, and the pace accelerates. Students who mastered Algebra 1 procedurally (memorizing steps) without truly understanding the logic often hit a wall in Algebra 2 where the procedures get too complex to memorize individually. Understanding why each concept works is what separates students who pass from those who struggle.' },
+      { q: 'What are the hardest topics in Algebra 2?', a: 'Logarithms and exponential functions are where most students hit their biggest wall — the notation is unfamiliar and the properties are easy to confuse under pressure. Complex numbers and sequences/series also trip up many students. The common thread is that these topics require understanding the underlying concept, not just memorizing steps. Students who understand what a logarithm is asking can reconstruct any property from that definition.' },
+      { q: 'Do I need to take Algebra 2 for college?', a: 'Yes — Algebra 2 (or its equivalent) is a prerequisite for virtually all college math courses, including statistics and calculus. Many college admissions processes also expect at least Algebra 2 on a high school transcript. More importantly, the function concepts and algebraic reasoning developed in Algebra 2 form the foundation for precalculus and beyond. Passing it with genuine understanding pays dividends for years.' },
+      { q: 'How do I study for Algebra 2 tests effectively?', a: 'Start test preparation four to five days before the exam, not the night before. Work problems from each topic type without looking at solutions. Focus extra time on your weakest areas. The night before: do a 20-minute review of problems you previously got wrong, then stop. Research consistently shows this distributed approach outperforms any single cramming session. How to Win at Math gives students the full system for making this work consistently.' },
+    ],
+  },
   },
 
   // ─── PILLAR 4 ─────────────────────────────────────────────────────────────
   {
     slug: 'help-child-math-homework',
     title: 'How to Help Your Child With Math Homework (Without the Frustration)',
+    metaTitle: 'How to Help Your Child With Math Homework',
     metaDescription: 'Help child with math homework without fights or frustration — practical strategies for parents who want to support without creating dependency.',
     keyword: 'help child with math homework',
     excerpt: 'Homework help goes wrong when parents accidentally do the thinking for their child. Here\'s how to actually help — without the frustration.',
@@ -1401,6 +1523,7 @@ export const posts: Post[] = [
   {
     slug: 'how-to-pass-sat-math',
     title: 'How to Pass the SAT Math Section: Strategies That Actually Work',
+    metaTitle: 'How to Pass the SAT Math Section',
     metaDescription: 'How to pass SAT math with strategies that actually work — covering structure, key topics, time management, and proven test-day tactics.',
     keyword: 'how to pass SAT math',
     excerpt: 'The SAT math section is beatable with the right preparation strategy. Here\'s exactly what to study and how to approach it on test day.',
@@ -1447,12 +1570,20 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'SAT math tests a narrow topic set in an unfamiliar format. Study the high-yield topics first (algebra, functions, data analysis). Practice with a timer every session. Use elimination strategies on multiple-choice. Build a 60-90 day practice schedule with distributed practice. Error analysis is the step most students skip and benefit most from.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'What math is on the SAT?', a: 'The SAT math section covers four main areas: algebra (the largest portion, about 35%), advanced math including quadratics and functions (another 35%), problem-solving and data analysis with statistics and ratios (25%), and geometry and trigonometry (5%). Students who are strong in Algebra 2 have a structural advantage on the SAT because the content focus matches that curriculum heavily.' },
+      { q: 'How long should I study for the SAT math section?', a: 'A 60-90 day preparation window with 30-45 minutes of practice four to five days per week produces significantly better results than compressed last-minute cramming. This distributed practice schedule allows the spacing effect to work — your brain consolidates math skills overnight, and multiple practice sessions across weeks build the fluency that time pressure demands. How to Win at Math teaches the study habits that make SAT prep significantly more efficient.' },
+      { q: 'Is the SAT math section hard?', a: 'The SAT math section tests a relatively narrow content range, but it presents familiar concepts in unfamiliar ways under time pressure with deliberate distractors in the answer choices. Students who know the content but have not practiced the specific format and pacing often underperform their knowledge level. The solution is format-specific practice — always timed, always using official SAT materials.' },
+      { q: 'What score do I need on SAT math to get into college?', a: 'Requirements vary dramatically by institution. Community colleges typically accept any SAT score. Competitive universities may expect scores of 700+ for STEM programs. The national average SAT math score is approximately 520. A score above 600 places you in roughly the top third of test-takers. Whatever your target school, research their median math SAT score for admitted students and use that as your preparation benchmark.' },
+    ],
+  },
   },
 
   // ─── PILLAR 2 ─────────────────────────────────────────────────────────────
   {
     slug: 'college-algebra-help',
     title: 'College Algebra Help: How to Pass Your First College Math Class',
+    metaTitle: 'College Algebra Help: Pass Your First College Math Class',
     metaDescription: 'College algebra help for students navigating their first college math course — why it\'s harder than high school and exactly how to succeed.',
     keyword: 'college algebra help',
     excerpt: 'College algebra catches students off guard. The math isn\'t harder — the pace and independence requirements are. Here\'s how to adapt.',
@@ -1491,6 +1622,7 @@ export const posts: Post[] = [
   {
     slug: 'my-teenager-hates-math',
     title: 'My Teenager Hates Math: Why It Happens and How to Actually Help',
+    metaTitle: 'My Teenager Hates Math: Why It Happens and How to Help',
     metaDescription: 'My teenager hates math — understanding why teens disengage and the specific, evidence-based ways parents can help without creating more resistance.',
     keyword: 'my teenager hates math',
     excerpt: 'When a teenager hates math, the worst response is pressure. Here\'s why disengagement happens — and what parents can do that actually works.',
@@ -1573,6 +1705,7 @@ export const posts: Post[] = [
   {
     slug: 'math-anxiety-middle-school',
     title: 'Math Anxiety in Middle School: Why It Starts and How to Stop It',
+    metaTitle: 'Math Anxiety in Middle School: Why It Starts',
     metaDescription: 'Math anxiety middle school — why anxiety peaks in 6th–8th grade, what parents and schools can do differently, and how to stop the cycle early.',
     keyword: 'math anxiety middle school',
     excerpt: 'Middle school is where math anxiety takes hold for most students. Understanding why it starts is the first step to stopping it.',
@@ -1614,6 +1747,7 @@ export const posts: Post[] = [
   {
     slug: 'back-to-school-math-anxiety',
     title: 'Back to School Math Anxiety: How to Prepare Your Child for Success',
+    metaTitle: 'Back to School Math Anxiety: Prepare Your Child',
     metaDescription: 'Back to school math anxiety affects thousands of students each August. Here\'s how parents can prepare their child for a strong math start this year.',
     keyword: 'back to school math anxiety',
     excerpt: 'August and September bring a surge of math anxiety for students and parents alike. Here\'s how to get ahead of it before school starts.',
@@ -1658,6 +1792,7 @@ export const posts: Post[] = [
   {
     slug: 'sat-vs-act-math',
     title: 'SAT vs ACT Math: Which Test Should You Take (And How to Prep for Each)',
+    metaTitle: 'SAT vs ACT Math: Which Test Should You Take?',
     metaDescription: 'SAT vs ACT math: learn how each test is structured, which suits your strengths, and how to prep differently for each so you choose the right exam.',
     keyword: 'SAT vs ACT math',
     excerpt: 'The SAT and ACT math sections test different things in different ways — and choosing the wrong test can cost you points before you even start studying.',
@@ -1706,11 +1841,19 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'The SAT has 44 questions in 70 minutes with adaptive modules, heavy algebra and advanced math focus, and limited trig. The ACT has 60 questions in 60 minutes with broader content including deeper trig and geometry. SAT favors students strong in algebra and advanced math; ACT favors fast workers with broad math backgrounds. Take one official practice section of each, convert scores, and commit to the test where you perform better. Prep differently: SAT prep emphasizes depth and algebraic fluency; ACT prep must include pacing training from the beginning.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'Is the SAT or ACT math section easier?', a: 'Neither is objectively easier — studies of matched student populations show nearly identical performance distributions on both tests. The question is which test is easier for you specifically. The SAT goes deeper on fewer topics (mostly algebra and advanced math); the ACT covers more ground with stricter time pressure. Students with strong algebra backgrounds tend to prefer the SAT; students who work quickly and have broad math backgrounds often prefer the ACT.' },
+      { q: 'Should I take both the SAT and ACT?', a: 'You should take at least one practice section of each under timed conditions before committing to a test. Once you have compared your scores using official conversion charts, commit to the test where you score higher and prep exclusively for that one. Splitting prep time between both tests typically weakens performance on both. The goal is finding your better fit and going deep on it.' },
+      { q: 'How do I convert between SAT and ACT math scores?', a: 'Both College Board and ACT publish official concordance tables that translate scores between tests. As a rough guide: a 700 on SAT math corresponds to approximately a 32-33 on the ACT math section. Most colleges accept both tests without preference, so comparing your actual practice scores on each test using the official conversion table is the most reliable way to determine which score to report.' },
+      { q: 'Do colleges prefer the SAT or ACT?', a: 'The vast majority of US colleges accept both the SAT and ACT without preference. Neither test gives you an advantage with admissions offices — what matters is your score relative to the school\'s admitted student profile. Choose the test where you personally perform best, not based on which test the school is perceived to prefer.' },
+    ],
+  },
   },
 
   {
     slug: 'how-to-pass-act-math',
     title: 'How to Pass the ACT Math Section: Beat the Clock and the Content',
+    metaTitle: 'How to Pass the ACT Math Section',
     metaDescription: 'How to pass ACT math: learn the exact format, pacing strategies, and topic priorities that let you beat both the clock and the content on test day.',
     keyword: 'how to pass ACT math',
     excerpt: 'The ACT math section gives you one minute per question — and most students run out of time before they run out of knowledge. Here is how to fix that.',
@@ -1765,6 +1908,7 @@ export const posts: Post[] = [
   {
     slug: 'signs-child-needs-math-tutor',
     title: '5 Signs Your Child Needs a Math Tutor (And When a Book Works Better)',
+    metaTitle: '5 Signs Your Child Needs a Math Tutor',
     metaDescription: 'Signs your child needs a math tutor — and when they do not. Learn the 5 warning signals, how to evaluate tutors, and when structured self-study costs less and works better.',
     keyword: 'signs child needs math tutor',
     excerpt: 'Not every child who is struggling in math needs a tutor — but some do. Here are the five signs that actually matter, and honest guidance on when tutoring is the wrong solution.',
@@ -1816,12 +1960,19 @@ export const posts: Post[] = [
       { type: 'callout', title: 'Key Takeaways', text: 'The five signs that genuinely indicate a child may need external math support: grades dropping across multiple consecutive units, escalating avoidance behavior, homework taking consistently three times longer than expected, test performance dramatically below homework performance, and a direct teacher flag. Tutoring is not the right solution for motivation problems, approach problems, or anxiety problems — it is the right solution for knowledge gaps in students motivated enough to use sessions productively. Tutoring costs $40-$150 per hour; structured self-study resources can produce comparable outcomes at a fraction of the cost for the right student profile. Diagnose the actual problem before choosing the intervention.' },
       { type: 'cta-end' },
     ],
+    faq: [
+      { q: 'At what grade should I get my child a math tutor?', a: 'There is no specific grade — what matters is whether your child is experiencing a persistent gap that normal classroom support isn\'t closing. Algebra 1 (typically 8th or 9th grade) is the most common inflection point where gaps become serious. If your child has been struggling for more than one marking period without improvement, it\'s time to intervene.' },
+      { q: 'How do I know if a math tutor is actually helping?', a: 'Within 4 to 6 weeks, you should see concrete improvement: better quiz scores, more willingness to attempt homework, or fewer complaints about not understanding class. If you see none of these signs after 6 weeks, the tutoring approach may not be the right fit for your child\'s specific gaps.' },
+      { q: 'Is a math tutor better than a math workbook for struggling students?', a: 'It depends on what is causing the struggle. If your child has specific content gaps, a tutor who can identify and target those gaps provides immediate feedback that a book cannot. But if the issue is mindset, study approach, or math anxiety, a comprehensive system like How to Win at Math often addresses the root cause more effectively — and at a fraction of the cost.' },
+      { q: 'How much should a math tutor cost?', a: 'Private math tutors typically charge between $40 and $120 per hour depending on location and experience. For students who need consistent support over months, this can become significant. Many families find that a structured book or program works just as well for systemic issues, reserving tutoring for specific stuck points.' },
+    ],
   },
 
   // ─── PILLAR 1 ─────────────────────────────────────────────────────────────
   {
     slug: 'why-am-i-so-bad-at-math',
     title: 'Why Am I So Bad at Math? The Real Reasons (And What to Do About It)',
+    metaTitle: 'Why Am I So Bad at Math? Real Reasons & Fixes',
     metaDescription: 'Why am I so bad at math? Science says it\'s not your brain — it\'s how math was taught. Discover the real causes and specific steps to actually get better.',
     keyword: 'why am I so bad at math',
     excerpt: 'Most people who think they are bad at math were never taught how to learn it — and those are very different problems with very different solutions.',
@@ -1873,6 +2024,12 @@ export const posts: Post[] = [
       { type: 'p', text: 'Then find one clear explanation of that specific concept and work through three to five problems before bed. Retrieve the answers from scratch, check them, note what errors you made and why. Do this again tomorrow. And the day after. Three weeks of this approach with one focused concept will produce more improvement than a year of passive review. The science on this is clear; the only remaining variable is whether you choose to apply it.' },
       { type: 'callout', title: 'Key Takeaways', text: 'The "math brain" myth is not supported by research — mathematical performance is heavily shaped by instruction quality, early experiences, mindset, and study approach. Fixed vs growth mindset (Dweck) directly affects how the brain processes mathematical errors. Math anxiety is physiologically real and impairs working memory — the same cognitive resource math requires. Stereotype threat is a documented, contextually activated performance tax that can be reduced through evidence-based techniques. Memorization-heavy teaching fails students who need conceptual understanding. Retrieval practice and spaced repetition are the most evidence-backed study methods for improving mathematical ability. The window for getting better at math is open at any age.' },
       { type: 'cta-end' },
+    ],
+    faq: [
+      { q: 'Is being bad at math a real thing, or is it a myth?', a: 'There is no such thing as a "math person" or "non-math person" in the way most people mean it. What people call being bad at math is almost always the result of accumulated gaps in foundational knowledge, poor study methods, or math anxiety — all of which are fixable. The science is clear: math ability is far more about how you learned than how you were born.' },
+      { q: 'What causes someone to be bad at math?', a: 'The most common causes are: gaps in foundational topics that were never properly learned (fractions, negative numbers, order of operations), study methods that don\'t work for math (re-reading instead of practicing), math anxiety that interferes with performance, and moving to new topics before previous ones were solid. Any one of these is fixable with the right approach.' },
+      { q: 'Can someone who was always bad at math become good at it?', a: 'Consistently, yes. Students who were convinced they had no math ability have made dramatic improvements once they understood what was actually causing their struggles. The path forward is identifying your specific gaps, closing them systematically, and using study strategies that actually work for mathematics — not strategies designed for humanities subjects.' },
+      { q: 'How do I stop being bad at math?', a: 'Start by diagnosing: which specific topics do you not understand? Then close those gaps one at a time using practice — not just re-reading. Add a consistent daily practice habit of 20 to 30 minutes. Address any math anxiety directly. How to Win at Math provides a complete system that covers all three of these areas together.' },
     ],
   },
 ];

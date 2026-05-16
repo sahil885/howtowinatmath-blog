@@ -28,9 +28,9 @@ export default function Home() {
       <div className="pillar-nav">
         <div className="container">
           {pillars.map((p) => (
-            <span key={p} className="pillar-tag">
+            <a key={p} href={`#pillar-${p}`} className="pillar-tag">
               {pillarNames[p]}
-            </span>
+            </a>
           ))}
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function Home() {
           .filter((p) => p.pillar === pillar)
           .sort((a, b) => a.publishOrder - b.publishOrder);
         return (
-          <section key={pillar} className="posts-grid-section">
+          <section key={pillar} id={`pillar-${pillar}`} className="posts-grid-section">
             <div className="container">
               <h2>Pillar {pillar}: {pillarNames[pillar]}</h2>
               <div className="posts-grid">
@@ -67,8 +67,4 @@ export default function Home() {
             <em>How to Win at Math</em> is the complete system — mindset, study strategy, and test performance — for students who have tried everything else.
           </p>
           <a href="https://howtowinatmath.com/" className="btn-hero">Get the Book →</a>
-        </div>
-      </section>
-    </>
-  );
-}
+       

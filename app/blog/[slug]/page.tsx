@@ -13,21 +13,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   if (!post) return {};
   const url = `${SITE_URL}/blog/${slug}`;
+  const ogImageUrl = `${SITE_URL}/og?slug=${slug}`;
+  const displayTitle = post.metaTitle ?? post.title;
   return {
-    title: post.title,
+    title: displayTitle,
     description: post.metaDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: post.title,
+      title: displayTitle,
       description: post.metaDescription,
       type: 'article',
       url,
       siteName: 'How to Win at Math Blog',
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: displayTitle }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: displayTitle,
       description: post.metaDescription,
+      images: [ogImageUrl],
     },
   };
 }
@@ -129,12 +133,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       '@type': 'Organization',
       name: 'How to Win at Math',
       url: 'https://howtowinatmath.com',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_URL}/logo.png`,
-      },
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    image: `${SITE_URL}/og?slug=${slug}`,
   };
 
   const breadcrumbSchema = {
@@ -147,16 +149,23 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     ],
   };
 
+  const faqSchema = post.faq && post.faq.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: post.faq.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  } : null;
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
 
       <nav aria-label="Breadcrumb" className="breadcrumb">
         <div className="container">
@@ -182,20 +191,5 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {post.content.map((block, i) => renderBlock(block, i))}
         </div>
 
-        {related.length > 0 && (
-          <div className="related-posts">
-            <h2>More From {post.pillarName}</h2>
-            <div className="related-grid">
-              {related.map((r) => (
-                <a key={r.slug} href={`/blog/${r.slug}`} className="related-card">
-                  <h3>{r.title}</h3>
-                  <p>{r.excerpt}</p>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </article>
-    </>
-  );
-}
+        {post.faq && post.faq.length > 0 && (
+          <div 
