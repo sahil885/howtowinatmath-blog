@@ -67,4 +67,8 @@ export default function Home() {
             <em>How to Win at Math</em> is the complete system — mindset, study strategy, and test performance — for students who have tried everything else.
           </p>
           <a href="https://howtowinatmath.com/" className="btn-hero">Get the Book →</a>
-       
+        </div>
+      </section>
+    </>
+  );
+}

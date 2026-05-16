@@ -192,4 +192,31 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
 
         {post.faq && post.faq.length > 0 && (
-          <div 
+          <div className="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            {post.faq.map(({ q, a }, i) => (
+              <div key={i} className="faq-item">
+                <h3>{q}</h3>
+                <p>{a}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {related.length > 0 && (
+          <div className="related-posts">
+            <h2>More From {post.pillarName}</h2>
+            <div className="related-grid">
+              {related.map((r) => (
+                <a key={r.slug} href={`/blog/${r.slug}`} className="related-card">
+                  <h3>{r.title}</h3>
+                  <p>{r.excerpt}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </article>
+    </>
+  );
+}
