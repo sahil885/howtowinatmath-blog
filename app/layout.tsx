@@ -3,6 +3,7 @@ import Script from 'next/script';
 import './globals.css';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
+const ADSENSE_ID = 'ca-pub-2676272684727826';
 const SITE_URL = 'https://blog.howtowinatmath.com';
 
 export const metadata: Metadata = {
@@ -59,6 +60,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        {/* Google AdSense auto-ads */}
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        {/* Google Analytics 4 */}
         {GA_ID && (
           <>
             <Script
