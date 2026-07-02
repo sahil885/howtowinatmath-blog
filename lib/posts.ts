@@ -87,6 +87,7 @@ export const posts: Post[] = [
       { type: 'ol', items: ['Email your teacher today — ask what opportunities exist to recover your grade (retakes, corrections, missing work)', 'Find out your exact grade breakdown — what\'s dragging you down most: missing work, failed tests, or both?', 'Identify the specific units you failed and go back to those first', 'Implement the homework and study habits above starting tonight', 'See if your school has free tutoring or math lab support'] },
       { type: 'p', text: 'For a complete step-by-step plan when the grade is already failing, read our dedicated guide on <a href="/blog/what-to-do-when-failing-math-class">what to do when you\'re failing math class</a>.' },
       { type: 'callout', title: 'The Real Problem Is Usually Approach, Not Ability', text: 'Most students who fail Algebra 1 don\'t fail because they\'re bad at math. They fail because nobody taught them how to approach math systematically — how to think through problems instead of memorize steps. That\'s exactly what How to Win at Math addresses.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/how-to-pass-algebra-2">how to pass Algebra 2</a>, <a href="/blog/how-to-pass-geometry">how to pass geometry</a>, and <a href="/blog/how-to-pass-calculus">how to pass calculus</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -135,6 +136,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'Failing math can trigger a spiral: you fail, feel stupid, disengage, fall further behind, fail more. Breaking out of a failing grade requires breaking out of that spiral first. You are not failing because you\'re bad at math. You\'re failing because some combination of gaps, habits, and approach have created this result — and all three are fixable.' },
       { type: 'p', text: 'For students who feel fundamentally "not a math person," read <a href="/blog/why-am-i-so-bad-at-math">why you\'re not bad at math</a> — because that belief is almost certainly wrong, and it\'s actively making things worse.' },
       { type: 'callout', title: 'One Semester Is Not Your Whole Story', text: 'Students fail math classes and go on to pass calculus. Students fail math in 9th grade and graduate with strong math skills. A failing grade is a signal that something needs to change — not a verdict about what you\'re capable of. Start with the steps above.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/how-to-not-fail-math">how to not fail math</a> and <a href="/blog/how-to-pass-math-test-without-studying">how to pass a math test without studying</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -185,6 +187,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'If your required college math is statistics, the approach is different from algebra or calculus — see our dedicated guide on <a href="/blog/how-to-pass-statistics">how to pass statistics class</a>.' },
       { type: 'p', text: 'If you\'re already failing and the semester isn\'t over, the step-by-step recovery guide at <a href="/blog/what-to-do-when-failing-math-class">what to do when failing math class</a> applies directly.' },
       { type: 'callout', title: 'The Students Who Pass Have a System', text: 'Students who consistently pass college math aren\'t just "better at math." They have a system: daily engagement, active problem-solving practice, early use of office hours, and a process for working through confusion. That system is learnable — and it\'s what How to Win at Math teaches.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/college-algebra-help">college algebra help</a> and <a href="/blog/how-to-pass-algebra-2">how to pass Algebra 2</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -230,6 +233,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'The night-before cram is the most common — and least effective — math test preparation strategy. For a complete evidence-based approach to pre-test preparation, read <a href="/blog/how-to-study-for-math-test">how to study for a math test the right way</a>. The short version: spread practice across multiple days, interleave problem types, and keep the night before light.' },
       { type: 'p', text: 'If you\'re behind on the material itself — not just test strategy — read our guide on <a href="/blog/how-to-catch-up-in-math">how to catch up in math class</a> before focusing on test technique.' },
       { type: 'callout', title: 'Key Takeaways', text: 'Failing math tests while understanding the class almost always means: studying through recognition instead of recall, and never practicing under test-like conditions. Fix: replace note re-reading with closed-note problem solving. Simulate test conditions in practice. Use brain dumps and skip-and-return strategies during tests.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/how-to-not-fail-math">how to not fail math</a> and <a href="/blog/how-to-pass-math-test-without-studying">how to pass a math test without studying</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -321,6 +325,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'When the test starts: brain dump all formulas on scratch paper immediately. Then scan the entire test before answering anything. Do the easiest problems first. Show all work. Skip and return on hard problems. If you\'re also struggling with test performance generally, review <a href="/blog/how-to-stop-failing-math-tests">how to stop failing math tests</a> — those strategies apply on finals too.' },
       { type: 'p', text: 'If you\'re reading this the night before your final, skip to our emergency guide: <a href="/blog/how-to-pass-math-exam-last-minute">how to pass a math final exam last minute</a>.' },
       { type: 'callout', title: 'Key Takeaways', text: 'Prepare for math finals over two weeks, not two days. Use old tests and quizzes to find exactly what to study. Work problems (don\'t re-read notes). Take a full timed practice test two days before. Keep the night before light. Sleep.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/how-to-pass-math-test-without-studying">how to pass a math test without studying</a> and <a href="/blog/math-study-guide-struggling-students">building a study guide that works</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -434,6 +439,7 @@ export const posts: Post[] = [
       { type: 'h2', text: 'Why Pre-Calc Matters: The Calculus Bridge' },
       { type: 'p', text: 'The skills you are building now are exactly what calculus assumes on day one — functions, trig, logs, and graphing — and calculus moves even faster than pre-calc. Nailing this course is the single best thing you can do to make calculus survivable later. If calculus is on your horizon, treat pre-calc with the seriousness it deserves; see <a href="/blog/how-to-pass-calculus">how to pass calculus</a> for what is coming.' },
       { type: 'p', text: 'Pre-calculus is not the class where you find out you are bad at math. It is the class where the old habit of cramming stops working and a real system starts to matter. Fix your algebra gaps, respect the topic list, practice actively every day, and catch small problems before they snowball. If you want the complete, confidence-first system that ties all of this together, that is exactly what the <a href="https://howtowinatmath.com/">How to Win at Math</a> ebook was built to give you.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/how-to-pass-algebra-2">how to pass Algebra 2</a>, <a href="/blog/how-to-pass-geometry">how to pass geometry</a>, and <a href="/blog/how-to-pass-statistics">how to pass statistics</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -575,6 +581,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'Confidence in math fluctuates — especially in harder courses, on unfamiliar problem types, or after a disappointing test. When this happens, return to problems you can solve. Spend 15 minutes on material you\'ve mastered. This isn\'t wasted time — it\'s deliberately re-establishing the pattern of success that confidence is built on.' },
       { type: 'p', text: 'Also examine whether the confidence drop is coming from test anxiety vs. actual knowledge gaps. If it\'s anxiety, see <a href="/blog/how-to-overcome-math-anxiety">how to overcome math anxiety</a>. If it\'s a knowledge gap, see <a href="/blog/how-to-get-better-at-math-fast">how to get better at math fast</a>.' },
       { type: 'callout', title: 'Key Takeaways', text: 'Confidence is built from: doing hard problems and succeeding (not being told you\'re smart), working at the edge of your ability, tracking wins explicitly, and replacing identity statements with specific problems you can fix. Confidence is a skill that develops — not a trait you have or don\'t.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/i-used-to-hate-math-heres-what-changed">how someone went from hating math to not</a> and <a href="/blog/stop-being-bad-at-math">how to stop being bad at math</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -795,6 +802,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'Some math tests (especially in pre-calculus, statistics, and calculus) assess conceptual understanding as much as procedural skill. For those, add this to your study routine: explain your solutions out loud as you work through practice problems. If you can\'t explain why you\'re doing each step, you understand the procedure but not the concept — and that gap will show up on the test.' },
       { type: 'p', text: 'For test-day strategies (brain dumps, skip-and-return, showing work for partial credit), see <a href="/blog/how-to-stop-failing-math-tests">how to stop failing math tests</a>.' },
       { type: 'callout', title: 'Key Takeaways', text: 'Effective math test study = retrieval practice (closed-note problem solving) + spaced across multiple days + interleaved problem types. Replace: re-reading notes, watching videos the night before, and blocked practice on one topic at a time.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/what-to-do-when-you-dont-understand-math">what to do when you don\'t understand math</a>, <a href="/blog/how-to-get-better-at-math-word-problems">how to get better at word problems</a>, and <a href="/blog/math-study-guide-struggling-students">building a study guide that works</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -842,6 +850,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'Even students who practice lots of problems often do it in a way that doesn\'t match test reality: they practice blocked (all factoring problems, then all quadratic problems, then all systems). Tests are interleaved.' },
       { type: 'p', text: 'Include interleaved practice in your final preparation: mix problems from all the topics the test covers, in random order. This forces you to identify the problem type before selecting an approach — which is exactly what tests require.' },
       { type: 'callout', title: 'Key Takeaways', text: 'The gap between class understanding and test performance is caused by: the fluency illusion (recognition isn\'t recall), scaffolding dependence (classroom cues you don\'t have on tests), and passive study methods. Fix: do problems before you feel ready, switch entirely to active study, and practice under real test conditions.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/what-to-do-when-you-dont-understand-math">what to do when you don\'t understand math</a> and <a href="/blog/how-to-pass-math-without-tutor">how to pass math without a tutor</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -944,6 +953,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'For test prep (1-2 weeks before a major test): extend the interleaved review portion to 15 minutes and add a full practice test session every 2-3 days. For catch-up after falling behind: spend the full 25 working minutes on the specific gaps you\'ve identified, not current material. For long-term maintenance: the standard 30-minute structure keeps skills sharp through the semester.' },
       { type: 'p', text: 'For adult learners who are improving their skills independently of a class, see <a href="/blog/how-to-improve-math-skills-as-adult">how to improve math skills as an adult</a> — the system adapts to non-classroom contexts.' },
       { type: 'callout', title: 'Key Takeaways', text: 'The 30-minute daily structure: 5 minutes warm-up (review mastered material), 15 minutes current challenge (closed-note, struggle-first), 7 minutes interleaved review (mixed older topics), 3 minutes progress logging. Do this every day. It compounds dramatically over weeks.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/how-to-get-better-at-math-word-problems">how to get better at word problems</a> and <a href="/blog/how-to-pass-math-without-tutor">how to pass math without a tutor</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -1091,6 +1101,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'Research from the University of Chicago found that parents who expressed math anxiety in front of their children — even casually — transferred measurably higher math anxiety to those children by the end of the school year. "I was never good at math either" is not a comforting statement. It\'s a prediction.' },
       { type: 'p', text: 'Reframe math as learnable and worth learning. Even if you struggled with it. Even if you still feel uncomfortable with it. Your child is watching your relationship with math and using it to form their own. For guidance on supporting math learning at home, see <a href="/blog/how-to-help-child-with-math">how to help your child with math without doing it for them</a>.' },
       { type: 'callout', title: 'Key Takeaways', text: 'The parent action plan for a failing math student: get specific data first, talk to the teacher, ask your child open questions before assuming the cause, identify whether it\'s gaps/habits/anxiety, fix the study method, choose the right support resource, and watch what you model about math at home.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/my-teenager-hates-math">what to do when your teenager hates math</a>, <a href="/blog/signs-child-needs-math-tutor">signs your child needs a tutor</a>, and <a href="/blog/back-to-school-math-anxiety">handling back-to-school math anxiety</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -1149,6 +1160,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'The long-term goal is a child who can work through math confusion independently — without you in the room. This happens gradually, as they build both skill and confidence. Your help should slowly become less necessary over time, not more necessary.' },
       { type: 'p', text: 'If you find that your child needs you present for every homework session, something is wrong with the support structure — either the material is genuinely too hard (foundational gaps), the anxiety is too high (see <a href="/blog/signs-child-has-math-anxiety">signs your child has math anxiety</a>), or the study approach needs to change (see <a href="/blog/my-child-is-failing-math">what to do when your child is failing math</a> for the full parent action plan).' },
       { type: 'callout', title: 'Key Takeaways', text: 'Effective math help keeps the thinking with your child: use questions not explanations, let them find their own errors, connect abstract concepts to real things they care about, stop before frustration overwhelms learning, and gradually build independence rather than reliance.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/my-teenager-hates-math">what to do when your teenager hates math</a> and <a href="/blog/signs-child-needs-math-tutor">signs your child needs a tutor</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -1513,6 +1525,7 @@ export const posts: Post[] = [
       ] },
       { type: 'p', text: 'Don\'t just write these on a formula sheet — internalize them through repeated use. If you can derive the quadratic formula from completing the square, you\'ll never forget it. Understanding where a formula comes from is the most reliable memory system available. For techniques on retaining formulas under pressure, see <a href="/blog/how-to-remember-math-formulas">how to remember math formulas</a>.' },
       { type: 'callout', title: 'Key Takeaways', text: 'Algebra 2 difficulty comes from abstraction and pace — not from the material being impossible. Fix Algebra 1 gaps first, master function concepts as the organizing principle, treat logarithms and complex numbers as new number systems (not just rule sets), and study by working problems (not reviewing notes). Consistent daily practice beats pre-test cramming every time.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/college-algebra-help">college algebra help</a> and <a href="/blog/how-to-pass-statistics">how to pass statistics</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -1632,6 +1645,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'Students who have done adequate preparation often underperform because of test-day anxiety and execution errors. The most common execution errors: misreading what the question asks, solving for the wrong variable, or making a sign error on the last step. Build a habit of reading the question again after solving to confirm you answered what was actually asked.' },
       { type: 'p', text: 'On the night before the test: review formulas for 20 minutes only, then stop. Sleep at your usual time. Students who study until midnight and sleep poorly often underperform relative to their preparation level. Also look at the guide on <a href="/blog/college-algebra-help">college algebra help</a> if you\'re preparing for both the SAT and an incoming college math course.' },
       { type: 'callout', title: 'Key Takeaways', text: 'SAT math tests a narrow topic set in an unfamiliar format. Study the high-yield topics first (algebra, functions, data analysis). Practice with a timer every session. Use elimination strategies on multiple-choice. Build a 60-90 day practice schedule with distributed practice. Error analysis is the step most students skip and benefit most from.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/how-to-pass-act-math">how to pass the ACT math section</a> and <a href="/blog/sat-vs-act-math">SAT vs ACT math</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -1774,6 +1788,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'Five days before the test: list every problem type on the test. Work three to five examples of each type from scratch. Day three: redo only the problem types you struggled with. Day before: do a 30-minute mixed problem set at test pace, then stop. The night before is for rest, not cramming.' },
       { type: 'p', text: 'Common trig test mistakes worth specifically practicing against: sign errors in quadrants (use ASTC), degree vs. radian confusion (always check which mode the problem specifies), forgetting additional solutions beyond the principal value when solving equations, and misidentifying period vs. frequency.' },
       { type: 'callout', title: 'Key Takeaways', text: 'Trigonometry is learnable through a small number of core concepts — the unit circle, reference angles, the Pythagorean identity — from which everything else can be derived. Memorizing disconnected facts doesn\'t work. Build genuine unit circle fluency first. Understand identities structurally. Practice graphing and equation-solving by hand. The investment pays off in every subsequent math course.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/how-to-pass-calculus">how to pass calculus</a> and <a href="/blog/how-to-pass-geometry">how to pass geometry</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -1823,6 +1838,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'Resilience in the face of academic challenge is built through repeated experiences of manageable difficulty — tasks that are hard enough to require effort but achievable with that effort. Students who only experience either too-easy tasks or too-hard tasks don\'t develop the resilience that middle school math demands.' },
       { type: 'p', text: 'For what to watch for as your child moves into high school, see <a href="/blog/my-teenager-hates-math">my teenager hates math: why it happens and how to help</a>.' },
       { type: 'callout', title: 'Key Takeaways', text: 'Middle school math anxiety is real, physiological, and distinct from content gaps. It peaks in this developmental window because academic difficulty and social vulnerability coincide. The most effective interventions are emotional and environmental first — regulate the home environment, normalize struggle, use evidence-based anxiety techniques (expressive writing, reappraisal, controlled breathing). Content remediation helps, but not until anxiety is reduced enough to make learning possible.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/back-to-school-math-anxiety">handling back-to-school math anxiety</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -1937,6 +1953,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'Download one official SAT practice test and one official ACT practice test from the College Board and ACT websites. Set a timer, do the math sections only under real conditions, and score them using the official answer keys. Plot both scores on a conversion table. Whichever comes out stronger is almost certainly your test.' },
       { type: 'p', text: 'Then commit. Students who split their prep time between both tests typically underperform on both. The students who improve most dramatically are the ones who pick one test, build a systematic prep plan, and execute it over eight to twelve weeks with consistent practice sessions. The choice matters less than the commitment to the choice.' },
       { type: 'callout', title: 'Key Takeaways', text: 'The SAT has 44 questions in 70 minutes with adaptive modules, heavy algebra and advanced math focus, and limited trig. The ACT has 60 questions in 60 minutes with broader content including deeper trig and geometry. SAT favors students strong in algebra and advanced math; ACT favors fast workers with broad math backgrounds. Take one official practice section of each, convert scores, and commit to the test where you perform better. Prep differently: SAT prep emphasizes depth and algebraic fluency; ACT prep must include pacing training from the beginning.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/how-to-pass-act-math">how to pass the ACT math section</a> and <a href="/blog/how-to-pass-sat-math">how to pass SAT math</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
@@ -2127,6 +2144,7 @@ export const posts: Post[] = [
       { type: 'p', text: 'The most effective first step is spending 20 minutes identifying your specific break point — the topic or concept where math genuinely stopped making sense. Write it down. Name it specifically. "Algebra" is too broad. "Setting up equations from word problems" is specific enough to address.' },
       { type: 'p', text: 'Then find one clear explanation of that specific concept and work through three to five problems before bed. Retrieve the answers from scratch, check them, note what errors you made and why. Do this again tomorrow. And the day after. Three weeks of this approach with one focused concept will produce more improvement than a year of passive review. The science on this is clear; the only remaining variable is whether you choose to apply it.' },
       { type: 'callout', title: 'Key Takeaways', text: 'The "math brain" myth is not supported by research — mathematical performance is heavily shaped by instruction quality, early experiences, mindset, and study approach. Fixed vs growth mindset (Dweck) directly affects how the brain processes mathematical errors. Math anxiety is physiologically real and impairs working memory — the same cognitive resource math requires. Stereotype threat is a documented, contextually activated performance tax that can be reduced through evidence-based techniques. Memorization-heavy teaching fails students who need conceptual understanding. Retrieval practice and spaced repetition are the most evidence-backed study methods for improving mathematical ability. The window for getting better at math is open at any age.' },
+      { type: 'p', text: 'Related reading: <a href="/blog/stop-being-bad-at-math">how to stop being bad at math</a> and <a href="/blog/i-used-to-hate-math-heres-what-changed">how someone went from hating math to not</a>.' },
       { type: 'cta-end' },
     ],
     faq: [
