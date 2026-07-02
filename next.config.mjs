@@ -33,6 +33,16 @@ const nextConfig = {
       destination: '/',
       permanent: true,
     },
+    {
+      source: '/blog/why-youre-not-bad-at-math',
+      destination: '/blog/why-am-i-so-bad-at-math',
+      permanent: true,
+    },
+    {
+      source: '/blog/how-to-catch-up-in-math-after-falling-behind',
+      destination: '/blog/how-to-catch-up-in-math',
+      permanent: true,
+    },
   ],
 };
 
