@@ -23,6 +23,7 @@ export interface Post {
   pillar: 1 | 2 | 3 | 4;
   pillarName: string;
   publishOrder: number;
+  updatedAt?: string;
   content: ContentBlock[];
   faq?: FaqItem[];          // FAQ schema items
 }
@@ -3007,6 +3008,7 @@ export const posts: Post[] = [
     pillar: 2,
     pillarName: 'Pass Your Math Class',
     publishOrder: 57,
+    updatedAt: '2026-07-11',
     content: [
       { type: 'p', text: 'If you are heading to college — or coming back to school after time away — one of the first hurdles you will face is a math placement test, and learning how to pass a math placement test can save you hundreds of dollars and an entire semester of your life. These tests decide which math course you start in. Score well and you jump straight into credit-bearing classes that count toward your degree. Score low and you land in remedial (also called developmental) math — courses you pay for but that earn zero credit toward graduation. The good news: placement tests are highly coachable, and most students who prepare for even a few weeks place at least one level higher.' },
       { type: 'h2', text: 'What a Math Placement Test Actually Is (and Why It Matters)' },
@@ -3072,6 +3074,7 @@ export const posts: Post[] = [
     pillar: 2,
     pillarName: 'Pass Your Math Class',
     publishOrder: 58,
+    updatedAt: '2026-07-11',
     content: [
       { type: 'p', text: 'If you have found yourself staring at a problem and wondering why is precalculus so hard when you did fine in earlier math, you are in very good company. Precalculus has a reputation as the course where a lot of otherwise strong students suddenly hit a wall. The good news is that it is hard for specific, nameable reasons — not because you have run out of math ability — and every one of those reasons has a fix. This guide breaks down exactly what makes precalculus feel so brutal and gives you a practical plan to get on top of it.' },
       { type: 'h2', text: 'Is Precalculus Actually Harder, or Does It Just Feel That Way?' },
@@ -3125,6 +3128,7 @@ export const posts: Post[] = [
     pillar: 3,
     pillarName: 'How to Study Math',
     publishOrder: 59,
+    updatedAt: '2026-07-11',
     content: [
       { type: 'p', text: 'If you want to know how to memorize the unit circle without drowning in a page full of fractions and square roots, here is the good news: you do not actually have to memorize dozens of separate values. The unit circle is built from a small number of patterns, and once you see them, you can rebuild the entire thing from memory in under a minute. This guide walks through those patterns step by step so trigonometry and precalculus stop feeling like guesswork.' },
       { type: 'h2', text: 'What the Unit Circle Actually Is' },
@@ -3177,6 +3181,7 @@ export const posts: Post[] = [
     pillar: 3,
     pillarName: 'How to Study Math',
     publishOrder: 60,
+    updatedAt: '2026-07-11',
     content: [
       { type: 'p', text: 'Most people think calculus is hard because the ideas are hard. In reality, the students who struggle in calculus are usually tripped up by the algebra and precalculus underneath it, not by derivatives and integrals themselves. That is why learning how to prepare for calculus before the class starts is one of the smartest moves you can make: a few weeks of targeted review can be the difference between calculus feeling like a natural next step and feeling like a brick wall. This guide covers exactly which skills to lock in and how.' },
       { type: 'h2', text: 'Why Preparation Beats Talent in Calculus' },
