@@ -3412,6 +3412,117 @@ export const posts: Post[] = [
       }
     ]
   },
+  {
+    slug: 'how-to-pass-summer-school-math',
+    title: 'How to Pass Summer School Math (Without Losing Your Whole Summer)',
+    metaTitle: 'How to Pass Summer School Math: Survival Guide',
+    metaDescription: 'Failed math and stuck in summer school? Here is exactly how to pass summer school math in a compressed session, catch up fast, and finally make it stick.',
+    keyword: 'how to pass summer school math',
+    excerpt: 'A practical, week-by-week plan for passing summer school math when a full year of content is crammed into six weeks.',
+    pillar: 2,
+    pillarName: 'Pass Your Math Class',
+    publishOrder: 62,
+    content: [
+      { type: 'p', text: 'If you are trying to figure out how to pass summer school math, you are almost certainly in one of two situations: you failed the class during the school year and you need the credit to graduate on time, or you are taking a course early to get ahead. Either way, the challenge is identical. Summer school compresses a year of math into a handful of weeks, and the strategies that got you through a normal semester will not work here. The good news is that summer math is genuinely passable, and thousands of students pass it every year. But it requires a different approach than the one that failed you the first time.' },
+      { type: 'p', text: 'This guide walks through what summer school math actually is, why it feels so brutal, and the specific study system that works when you have almost no margin for error.' },
+
+      { type: 'h2', text: 'Why Is Summer School Math So Much Harder Than the Regular Year?' },
+      { type: 'p', text: 'It is not your imagination. The difficulty is structural, not personal. A typical high school algebra or geometry course runs roughly 180 instructional days. Most summer programs run about six weeks, four or five days a week, often from early morning until early afternoon. That means you are covering three to four times as much material per day as you did during the school year.' },
+      { type: 'p', text: 'The practical consequences of that compression are what actually sink students:' },
+      { type: 'ul', items: [
+        'A single missed day is equivalent to missing most of a week during the regular year.',
+        'There is no time for a concept to sink in slowly. You learn it Monday and get tested on it Thursday.',
+        'You cannot rely on a big project or extra credit to rescue a bad grade. There usually is not one.',
+        'Fewer total assignments means each one is worth a much larger share of your final grade.',
+        'If you fall two days behind, the class does not slow down to let you catch up.'
+      ]},
+      { type: 'p', text: 'Notice that none of those are about being bad at math. They are about pace and margin. Most students who fail summer school math do not fail because the problems were too hard. They fail because they fell behind in week two and never recovered. Understanding that distinction changes what you actually need to do.' },
+
+      { type: 'h2', text: 'How Does Summer School Math Actually Work?' },
+      { type: 'p', text: 'Before you build a plan, find out which version of summer math you are in, because they have very different rules. Ask your counselor directly rather than guessing.' },
+      { type: 'h3', text: 'Credit recovery' },
+      { type: 'p', text: 'Credit recovery is for students who took the course and did not earn the credit. In most programs you repeat only the units you failed rather than the entire course, which is why some students finish in three or four weeks instead of six. In many districts, credit recovery counts toward graduation requirements but does not replace the original grade in your GPA calculation. That is worth confirming with your counselor, because it changes how much the grade matters to you and where you should spend your energy.' },
+      { type: 'h3', text: 'Full course repeat or advancement' },
+      { type: 'p', text: 'Here you take the entire course start to finish in a compressed window. This is common if you failed both semesters, or if you are taking a course early to move ahead. There is no skipping units, so pacing is everything.' },
+      { type: 'h3', text: 'Online or self-paced programs' },
+      { type: 'p', text: 'Online credit recovery gives you flexibility, which sounds like a gift and is actually the biggest trap in this entire article. With no fixed class time, the deadline feels distant right up until it is not. If you are in an online program, you must impose your own schedule. Pick specific hours on specific days and treat them as immovable. Students fail online summer math at high rates for exactly one reason: they planned to start next week, every week.' },
+      { type: 'callout', title: 'Ask these four questions on day one', text: 'What percentage do I need to pass? How much of my grade is the final exam? What is the attendance policy, and how many absences before I lose credit? Can I retake any assessments? The answers determine your entire strategy, and almost no one asks.' },
+
+      { type: 'h2', text: 'What Should You Do Before Summer School Starts?' },
+      { type: 'p', text: 'If you have not started yet, you have leverage that students already in week three do not. Use it.' },
+      { type: 'ol', items: [
+        'Find out exactly why you failed the first time. Pull up your old grades. Was it missing homework, low test scores, or absences? These three failures have completely different fixes, and treating the wrong one is why students repeat the same outcome.',
+        'Identify the specific topic where you first got lost. Almost every math failure has an origin point, a week where the thread snapped and nothing after it made sense. Find that unit in your old notes or textbook.',
+        'Spend a few hours patching that one gap before day one. If you lost the thread at solving multi-step equations, drill only that until it is automatic. Repairing one foundational gap in advance is worth more than reviewing the whole course lightly.',
+        'Set up a fixed daily study block now, in your calendar, before the class starts. Decide the time and place while you are still motivated, because motivation will be lower in week three.',
+        'Tell someone your plan. A parent, a friend, a sibling. Accountability is unglamorous and it works.'
+      ]},
+      { type: 'p', text: 'If you are starting from a long way behind and the whole subject feels like a fog, our guide on <a href="/blog/how-to-catch-up-in-math">how to catch up in math</a> covers the process of rebuilding foundations from further back without starting over from scratch.' },
+
+      { type: 'h2', text: 'How Do You Study for Summer School Math When Every Day Counts?' },
+      { type: 'p', text: 'The core mistake students make is studying summer math the way they study history: reading notes, rewatching lessons, highlighting. That is recognition, not recall, and it collapses on test day. In a compressed course, you cannot afford to discover the difference at the exam.' },
+      { type: 'h3', text: 'Do problems, do not review problems' },
+      { type: 'p', text: 'There is an enormous gap between watching your teacher solve a problem and solving it yourself with a blank page in front of you. Watching feels productive because it feels smooth. Your own work will feel clumsy by comparison, and that clumsiness is exactly the signal you need. Close the notes, attempt the problem cold, and only then check the worked example. Every study session should be mostly you writing, not mostly you reading.' },
+      { type: 'h3', text: 'Study the same day you learn it' },
+      { type: 'p', text: 'This is the single highest-leverage habit in summer school. Thirty to forty-five minutes on the day you learn a concept is worth more than three hours the weekend before the test, because in a compressed course the weekend before the test is four units later. You are not trying to master everything. You are trying to make sure nothing goes into the pile of things you never understood.' },
+      { type: 'h3', text: 'Keep a running list of what you cannot do yet' },
+      { type: 'p', text: 'Every time you hit a problem type you cannot solve, write it on a single running list. Not the whole problem, just the type: factoring when the leading coefficient is not one, word problems with two unknowns, whatever it is. That list is your actual study guide. Most students study what they already know because it feels good. Your list forces you to study what will actually be on the test and cost you points.' },
+      { type: 'h3', text: 'Attack careless mistakes as their own problem' },
+      { type: 'p', text: 'In a compressed course, arithmetic slips and sign errors can be the entire gap between passing and failing. If you consistently understand the method but lose points on execution, that is a separate, fixable problem with its own techniques, which we cover in detail in <a href="/blog/how-to-stop-careless-mistakes-in-math">how to stop making careless mistakes in math</a>.' },
+
+      { type: 'cta-mid' },
+
+      { type: 'h2', text: 'How Do You Avoid Falling Behind in Summer School?' },
+      { type: 'p', text: 'Falling behind is the mechanism by which nearly every summer school failure happens, so it deserves direct attention rather than general advice about working hard.' },
+      { type: 'p', text: 'The trap works like this. You miss one concept on Tuesday. Wednesday builds on Tuesday, so you understand less of Wednesday. Thursday builds on Wednesday. By Friday you are not confused about one thing, you are confused about everything, and the amount you would need to fix has grown past what feels possible. So you stop trying, and the class runs away from you.' },
+      { type: 'p', text: 'The counter is a rule, not a feeling:' },
+      { type: 'ul', items: [
+        'Never let a confusion survive 24 hours. If you did not get something in class, resolve it that same night or first thing the next morning.',
+        'Treat attendance as non-negotiable. In most programs a small number of absences costs you the credit automatically, regardless of your grades.',
+        'Use the teacher before class, not after you are lost. Summer teachers usually have far fewer students and more availability than during the year. Ten minutes of their time in week one is worth hours in week four.',
+        'Never turn in nothing. A partial attempt is almost always worth more than a zero, and zeros are mathematically vicious in a course with few assignments.',
+        'Check your grade weekly. Do not find out in week five that you needed a different plan in week two.'
+      ]},
+
+      { type: 'h2', text: 'What If You Are Already Behind?' },
+      { type: 'p', text: 'If you are reading this in week three with a failing grade, do not spend energy on regret. Do this instead, in order:' },
+      { type: 'ol', items: [
+        'Calculate exactly what you need. Ask your teacher what score on the remaining work gets you to passing. A concrete number turns panic into a task, and sometimes the number is far more achievable than you feared.',
+        'Talk to your teacher today, not next week. Summer teachers generally want you to pass and often have more flexibility than they advertise. Ask specifically what makeup work, retakes, or corrections are available. You will not get an option you never asked for.',
+        'Triage the remaining units. You cannot fix everything. Ask which topics carry the most weight on the final and work on those first.',
+        'Fix zeros before you chase improvements. Turning a 0 into a 60 moves your average far more than turning a 75 into an 85, and usually takes less time.',
+        'Cut everything else for the remaining weeks. It is a few weeks. The tradeoff is worth it if it means not repeating this again next summer.'
+      ]},
+      { type: 'p', text: 'If your situation is closer to a full-scale rescue than a course correction, the tactics in <a href="/blog/how-to-not-fail-math">how to not fail math</a> apply directly here.' },
+
+      { type: 'h2', text: 'How Should You Prepare for the Summer School Final Exam?' },
+      { type: 'p', text: 'Summer finals are usually worth a large share of your grade, which cuts both ways. It means a bad final can undo a decent term, but it also means a strong final can rescue a rough one. Do not treat it as one more test.' },
+      { type: 'ol', items: [
+        'Get the topic list from your teacher, in writing if possible. Not a vague description, an actual list of what is covered.',
+        'Rate every topic on that list from one to five on how confident you are solving it cold, without notes.',
+        'Spend your study time almost entirely on the ones you rated one, two, and three. This is uncomfortable and it is the whole point.',
+        'Take at least one full practice test under real conditions: timed, no notes, no phone, in one sitting. Simulating the conditions matters as much as knowing the content.',
+        'Grade it honestly, then restudy only what you missed. Repeat if there is time.'
+      ]},
+      { type: 'p', text: 'The reason this works is that it targets the gap between feeling prepared and being prepared. Reviewing familiar material produces confidence without competence. A timed practice test under real conditions produces an accurate picture, which is less comfortable and far more useful.' },
+
+      { type: 'h2', text: 'How Do You Make Sure This Is the Last Time?' },
+      { type: 'p', text: 'Passing summer school gets you the credit. It does not automatically fix the reason you needed it, and next year the course after this one will be harder. The students who end up back in summer school a second time are usually the ones who treated it as a hurdle to clear rather than a gap to close.' },
+      { type: 'p', text: 'Ask yourself honestly what actually went wrong. If it was missing work, the fix is a system, not more effort. If it was test performance despite understanding the material, the fix is how you practice. If it was a foundational gap from an earlier year, the fix is going back and repairing it, which almost no one does and which almost always works. Our <a href="/blog/math-study-guide-struggling-students">math study guide for struggling students</a> breaks down how to diagnose which of these is yours.' },
+      { type: 'p', text: 'That diagnostic approach is the entire premise behind <a href="https://howtowinatmath.com/">How to Win at Math</a>. It is built for students who have been told they are just not math people, and it focuses on the specific, fixable habits and gaps that cause math grades to collapse, rather than on more practice problems. If summer school taught you that you can actually do this when you have a real system, the next step is keeping that system in September.' },
+      { type: 'callout', title: 'The one thing to remember', text: 'You did not fail math because you are incapable of math. You fell behind, and the course kept moving. Summer school is short enough that if you refuse to let a single confusion sit overnight, the pace stops being your enemy and starts being your advantage.' },
+      { type: 'p', text: 'Six weeks is not long. It is genuinely survivable, and the version of you who walks into next year with the credit and a working study system is worth the summer you are giving up.' },
+      { type: 'cta-end' }
+    ],
+    faq: [
+      { q: 'Is summer school math harder than regular math class?', a: 'The content is the same, but the pace is roughly three to four times faster. A full year of material is typically compressed into about six weeks. That makes it harder to keep up but not harder to understand, and it also means the finish line arrives quickly. Most students who fail summer school fail because of pace and missed days, not because the problems were beyond them.' },
+      { q: 'What happens if I fail summer school math?', a: 'It varies by district, but common outcomes include repeating the course during the next school year, taking it through an online credit recovery program, or in some cases delayed graduation if the credit is required. Talk to your counselor as soon as you think you might not pass, because options like extended deadlines or alternative programs usually need to be arranged before the session ends, not after.' },
+      { q: 'Does summer school math affect my GPA?', a: 'This depends entirely on your district and on whether you are in credit recovery or a full course repeat. In many districts, credit recovery grades count toward graduation requirements but do not replace the original failing grade in your GPA. In others, the new grade does replace it. Ask your counselor directly, because the answer changes how much the specific grade matters versus simply earning the credit.' },
+      { q: 'How many hours a day should I study for summer school math?', a: 'Thirty to sixty minutes of focused problem-solving on the same day you learn a concept is more effective than several hours of cramming on a weekend. In a compressed course, the weekend before a test may be several units after the material was taught. Daily consistency matters far more than total hours, and the work should be mostly you solving problems rather than reading notes.' },
+      { q: 'Can I pass summer school math if I am already failing halfway through?', a: 'Often yes, but you have to act immediately rather than hoping it turns around. Ask your teacher what score on the remaining work would get you to passing, prioritize turning zeros into partial credit, and focus your studying on the topics that carry the most weight on the final. Summer teachers frequently have more flexibility with makeup work and retakes than they announce, but you have to ask.' },
+      { q: 'Is online summer school math easier than in-person?', a: 'It is more flexible, which is not the same as easier. Online programs have significantly higher non-completion rates precisely because there is no fixed class time forcing you to show up. If you take an online course, schedule specific hours on specific days and protect them the way you would a physical class. Students who treat online summer school as something to do eventually usually do not finish it.' },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): Post | undefined {
