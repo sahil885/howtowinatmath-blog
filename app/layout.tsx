@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
+import { personSchema } from '@/lib/author';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
 const ADSENSE_ID = 'ca-pub-2676272684727826';
@@ -43,6 +44,7 @@ const orgSchema = {
   name: 'How to Win at Math',
   url: 'https://howtowinatmath.com',
   sameAs: [SITE_URL],
+  founder: personSchema()
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -94,6 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </a>
             <nav aria-label="Main navigation">
               <a href="/">Blog</a>
+              <a href="/about">About</a>
               <a href="https://howtowinatmath.com/" className="btn-nav">Get the Book</a>
             </nav>
           </div>
@@ -107,6 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </p>
             <nav aria-label="Footer navigation" className="footer-links">
               <a href="/">Blog Home</a>
+              <a href="/about">About</a>
               {' '}-{' '}
               <a href="https://howtowinatmath.com/">Main Site</a>
             </nav>
