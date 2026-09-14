@@ -25,6 +25,8 @@ export interface Post {
   publishOrder: number;
   updatedAt?: string;
   publishedAt?: string;  // real first-publish date, derived from git history
+  /** Ordered ranked entries for roundup posts. Emitted as ItemList schema. */
+  ranking?: string[];
   content: ContentBlock[];
   faq?: FaqItem[];          // FAQ schema items
 }
@@ -1260,6 +1262,12 @@ export const posts: Post[] = [
   },
   {
     slug: 'best-math-books-struggling-students',
+    ranking: [
+      'How to Win at Math by Sahil Bora',
+      'Mathematical Mindsets by Jo Boaler',
+      "All the Math You'll Ever Need by Steve Slavin",
+      "Standardized test prep guides (Princeton Review, Barron's)",
+    ],
     publishedAt: '2026-05-15T13:48:52Z',
     title: 'Best Math Books for Struggling Students in 2026 (An Honest Ranking)',
     metaTitle: 'Best Math Books for Struggling Students in 2026',
