@@ -61,20 +61,21 @@ export default function AboutPage() {
       <article className="article-body">
         <h2>Who writes this blog</h2>
         <p>
-          This blog is written by {AUTHOR.name}, the author of{' '}
-          <a href={BOOK_URL}>{BOOK_NAME}</a>. {AUTHOR.bio}
+          My name is {AUTHOR.name} and I am the creator and author of{' '}
+          <a href={BOOK_URL}>{BOOK_NAME}</a>. I wrote the first edition in 2014.
         </p>
-
-        {/* TODO (Sahil): replace the paragraph below with your own story in your
-            own words — what your relationship with math was like, and what made
-            you write the book. A specific personal account is the single
-            strongest trust signal on this page. */}
         <p>
-          The short version: the students who struggle hardest with math are
-          usually not the ones who cannot do it. They are the ones who fell behind
-          at one specific point, never got that gap filled, and concluded they were
-          simply not a math person. Almost everything published here comes back to
-          that idea.
+          I struggled with math through my final years of high school. When I got
+          to university and started engineering mathematics, it was obvious the
+          study habits I had brought with me were not going to survive the step up.
+          So I spent months on that problem directly: buying books and courses on
+          how to learn mathematics, and testing what actually worked.
+        </p>
+        <p>
+          It worked. I went from poor results in high school math to outstanding
+          marks in high-level university engineering mathematics. The book is the
+          method I ended up with. This blog is that same material, broken into free
+          articles.
         </p>
 
         <h2>Why this blog exists</h2>
@@ -135,9 +136,12 @@ export default function AboutPage() {
           you, that is a good outcome.
         </p>
 
-        {/* TODO (Sahil): add a contact route you are happy to publish — a support
-            address or a contact form. A reachable human is a trust signal; your
-            personal inbox may not be the one you want listed. */}
+        <h2>Contact</h2>
+        <p>
+          Questions about the book, or something on the blog that is wrong or
+          unclear? Email{' '}
+          <a href="mailto:sahil@howtowinatmath.com">sahil@howtowinatmath.com</a>.
+        </p>
       </article>
     </>
   );
