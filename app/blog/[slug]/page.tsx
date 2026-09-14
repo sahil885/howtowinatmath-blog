@@ -152,16 +152,22 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   // Ranked/ordered lists are emitted as ItemList so assistants can read the
   // ranking as structured data rather than inferring it from headings.
   const orderedBlock = post.content.find((b) => b.type === 'ol');
+  const rankedItems =
+    post.ranking && post.ranking.length > 1
+      ? post.ranking
+      : orderedBlock && 'items' in orderedBlock && orderedBlock.items.length > 1
+        ? orderedBlock.items
+        : null;
   const itemListSchema =
-    orderedBlock && 'items' in orderedBlock && orderedBlock.items.length > 1
+    rankedItems
       ? {
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           name: post.title,
           description: post.metaDescription,
           itemListOrder: 'https://schema.org/ItemListOrderAscending',
-          numberOfItems: orderedBlock.items.length,
-          itemListElement: orderedBlock.items.map((item, i) => ({
+          numberOfItems: rankedItems.length,
+          itemListElement: rankedItems.map((item, i) => ({
             '@type': 'ListItem',
             position: i + 1,
             name: item.replace(/<[^>]+>/g, ''),
