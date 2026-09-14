@@ -24,6 +24,7 @@ export interface Post {
   pillarName: string;
   publishOrder: number;
   updatedAt?: string;
+  publishedAt?: string;  // real first-publish date, derived from git history
   content: ContentBlock[];
   faq?: FaqItem[];          // FAQ schema items
 }
@@ -42,6 +43,7 @@ export const posts: Post[] = [
   // ─── PILLAR 2 ─────────────────────────────────────────────────────────────
   {
     slug: 'how-to-pass-algebra-1-high-school',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Pass Algebra 1 in High School: A Complete Survival Guide',
     metaTitle: 'How to Pass Algebra 1 in High School',
     metaDescription: 'Struggling with Algebra 1? This step-by-step survival guide shows you exactly how to pass — even if you feel completely lost right now.',
@@ -100,6 +102,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'what-to-do-when-failing-math-class',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'What to Do When You\'re Failing Math Class: A Step-by-Step Action Plan',
     metaTitle: 'What to Do When You\'re Failing Math Class',
     metaDescription: 'Failing math class right now? Don\'t panic. Here\'s a specific step-by-step action plan to turn your grade around before it\'s too late.',
@@ -150,6 +153,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-pass-college-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Pass College Math Class (Even If You\'ve Failed Before)',
     metaTitle: 'How to Pass College Math Class',
     metaDescription: 'College math fails 40-60% of students every semester. Here\'s what the students who pass do differently — a complete guide to surviving college math.',
@@ -201,6 +205,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-stop-failing-math-tests',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Stop Failing Math Tests: The Honest Guide',
     metaDescription: 'If you understand math in class but keep failing tests, you\'re not studying wrong — you\'re studying with the wrong method. Here\'s the fix.',
     keyword: 'how to stop failing math tests',
@@ -247,6 +252,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-raise-math-grade-fast',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Raise Your Math Grade Fast: 7 Things That Actually Work',
     metaTitle: 'How to Raise Your Math Grade Fast',
     metaDescription: 'Need to raise your math grade before it\'s too late? These 7 specific strategies move grades the fastest — without tutors or miracles required.',
@@ -293,6 +299,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-prepare-for-math-final-exam',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Prepare for a Math Final Exam Without Cramming',
     metaDescription: 'Math finals cover everything — and cramming for them guarantees failure. Here\'s the strategic 2-week plan to walk in confident and actually perform.',
     keyword: 'how to prepare for a math final exam',
@@ -339,6 +346,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-pass-geometry',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Pass Geometry When You Have No Idea What\'s Going On',
     metaTitle: 'How to Pass Geometry Class (Even If You\'re Lost)',
     metaDescription: 'Geometry feels completely different from algebra — and that trips up most students. Here\'s how to understand it and pass, even if you feel totally lost.',
@@ -391,6 +399,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-pass-precalculus',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Pass Pre-Calculus: A Complete Survival Guide',
     metaTitle: 'How to Pass Pre-Calculus (Complete Guide)',
     metaDescription: 'Pre-calculus is where a lot of solid math students suddenly struggle. Here is what it covers, why it is hard, and a topic-by-topic plan to actually pass it.',
@@ -456,6 +465,7 @@ export const posts: Post[] = [
   // ─── PILLAR 1 ─────────────────────────────────────────────────────────────
   {
     slug: 'how-to-overcome-math-anxiety',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Overcome Math Anxiety: What Research Actually Shows Works',
     metaTitle: 'How to Overcome Math Anxiety: What Actually Works',
     metaDescription: 'Math anxiety is real, measurable, and affects 1 in 5 students. Here\'s what the science says actually works to overcome it — not just cope with it.',
@@ -505,6 +515,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'real-reason-you-freeze-on-math-tests',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'The Real Reason You Freeze Up on Math Tests (It\'s Not What You Think)',
     metaTitle: 'The Real Reason You Freeze Up on Math Tests',
     metaDescription: 'If your mind goes blank on math tests despite understanding the material, here\'s the actual cognitive reason — and specific techniques that fix it.',
@@ -551,6 +562,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-build-confidence-in-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Build Confidence in Math (Even If You\'ve Always Struggled)',
     metaTitle: 'How to Build Confidence in Math',
     metaDescription: 'Math confidence isn\'t something you\'re born with — it\'s something you build through a specific sequence of experiences. Here\'s exactly how.',
@@ -594,6 +606,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'youre-not-a-math-person-myth',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Why Saying "I\'m Not a Math Person" Is Actively Hurting Your Grade',
     metaTitle: '"I\'m Not a Math Person" Is Hurting Your Grade',
     metaDescription: 'The "I\'m not a math person" belief feels true — but research shows it actively makes your performance worse. Here\'s the science and how to change it.',
@@ -637,6 +650,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'math-anxiety-adults',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Math Anxiety in Adults: Why It Persists — and How to Finally Fix It',
     metaTitle: 'Math Anxiety in Adults: Why It Persists and How to Fix It',
     metaDescription: 'Adult math anxiety is extremely common and keeps millions from opportunities. Here\'s why it develops, why it sticks, and what actually works to fix it.',
@@ -682,6 +696,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'i-used-to-hate-math-heres-what-changed',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'I Used to Hate Math. Here\'s What Actually Changed Everything.',
     metaTitle: 'I Used to Hate Math — Here\'s What Actually Changed',
     metaDescription: 'Hating math usually means you never actually understood it. Here\'s the real turning point — and how to find it for yourself, at any level.',
@@ -726,6 +741,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'what-science-says-about-being-bad-at-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: "What Science Actually Says About Being 'Bad at Math'",
     metaDescription: 'Is being bad at math genetic? Science has a clear answer — and it\'s not what most people believe. Here\'s what the research actually shows.',
     keyword: 'I am bad at math will I ever get better',
@@ -768,6 +784,7 @@ export const posts: Post[] = [
   // ─── PILLAR 3 ─────────────────────────────────────────────────────────────
   {
     slug: 'how-to-study-for-math-test',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Study for a Math Test the Right Way (Most Students Get This Wrong)',
     metaTitle: 'How to Study for a Math Test the Right Way',
     metaDescription: 'Re-reading notes doesn\'t work for math tests. Here\'s the research-backed method that actually builds test performance — not just familiarity.',
@@ -816,6 +833,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'understand-math-in-class-fail-tests',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Why You Understand Math in Class But Fail Tests — And Exactly How to Fix It',
     metaTitle: 'Why You Understand Math in Class But Fail Tests',
     metaDescription: 'Following along in class but going blank on tests? This is a specific problem with a specific name and a specific fix. Here\'s everything you need to know.',
@@ -864,6 +882,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-remember-math-formulas',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Remember Math Formulas (Without Rote Memorization)',
     metaTitle: 'How to Remember Math Formulas Without Rote Memorization',
     metaDescription: 'Rote-memorized formulas fail under pressure. Understanding them makes them stick permanently. Here\'s how to make every math formula actually stay.',
@@ -913,6 +932,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'best-way-to-practice-math-at-home',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'The Best Way to Practice Math at Home (A 30-Minute Daily System)',
     metaTitle: 'The Best Way to Practice Math at Home Daily',
     metaDescription: 'Daily math practice beats marathon cramming sessions every time. Here\'s a 30-minute daily system that actually builds lasting math skill.',
@@ -967,6 +987,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'why-cramming-doesnt-work-for-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Why Cramming Doesn\'t Work for Math (And What to Do Instead)',
     metaTitle: 'Why Cramming Doesn\'t Work for Math',
     metaDescription: 'Cramming works okay for some subjects. For math, it actively hurts your performance. Here\'s the science — and the week-before plan that actually works.',
@@ -1011,6 +1032,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-improve-math-skills-as-adult',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Improve Your Math Skills as an Adult (Without Going Back to School)',
     metaTitle: 'How to Improve Your Math Skills as an Adult',
     metaDescription: 'Adults can absolutely improve at math — but the approach that works is different from classroom learning. Here\'s the method that gets real results for adults.',
@@ -1057,6 +1079,7 @@ export const posts: Post[] = [
   // ─── PILLAR 4 ─────────────────────────────────────────────────────────────
   {
     slug: 'my-child-is-failing-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'My Child Is Failing Math: 7 Steps to Actually Turn It Around',
     metaTitle: 'My Child Is Failing Math: 7 Steps to Turn It Around',
     metaDescription: 'If your child is failing math, panic and lectures won\'t help. Here are 7 specific steps that actually move the needle — a real action plan for parents.',
@@ -1115,6 +1138,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-help-child-with-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Help Your Child With Math Without Doing It for Them',
     metaTitle: 'How to Help Your Child With Math',
     metaDescription: 'Helping with math homework is tricky — too much help and they don\'t learn, too little and they give up. Here\'s how to support without taking over.',
@@ -1173,6 +1197,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'signs-child-has-math-anxiety',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Signs Your Child Has Math Anxiety (And What Parents Can Do About It)',
     metaTitle: 'Signs Your Child Has Math Anxiety',
     metaDescription: 'Math anxiety affects 1 in 5 children and is easy to miss or misread. Here\'s how to spot it — and what research shows parents can do to help.',
@@ -1235,6 +1260,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'best-math-books-struggling-students',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Best Math Books for Struggling Students in 2026 (An Honest Ranking)',
     metaTitle: 'Best Math Books for Struggling Students in 2026',
     metaDescription: 'Looking for a math book that actually helps struggling students? Here\'s an honest, detailed ranking of what works — and what to avoid.',
@@ -1289,6 +1315,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'math-tutor-vs-math-book',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Math Tutor vs. Math Book: Which Is Actually Better for Your Child?',
     metaTitle: 'Math Tutor vs. Math Book: Which Is Better?',
     metaDescription: 'Tutoring or a book — which is the right call for a struggling math student? Here\'s an honest comparison of cost, effectiveness, and when each makes sense.',
@@ -1349,6 +1376,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'khan-academy-vs-math-book',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Khan Academy vs. a Structured Math Book: An Honest Comparison',
     metaTitle: 'Khan Academy vs. a Structured Math Book',
     metaDescription: 'Khan Academy is free and comprehensive — but is it enough for struggling students? Here\'s an honest look at what it does and doesn\'t do, and when a book is better.',
@@ -1404,6 +1432,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'math-resources-struggling-students',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Best Math Resources for Struggling Students: What Parents Need to Know',
     metaTitle: 'Best Math Resources for Struggling Students',
     metaDescription: 'The internet has more math resources than ever — but most don\'t help struggling students. Here\'s an honest guide to what actually works and why.',
@@ -1463,6 +1492,7 @@ export const posts: Post[] = [
   // ─── NEW PILLAR 2 ─────────────────────────────────────────────────────────
   {
     slug: 'how-to-pass-algebra-2',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Pass Algebra 2: A Step-by-Step Survival Guide',
     metaDescription: 'How to pass Algebra 2 when the material feels overwhelming — a step-by-step survival guide covering every major topic and study strategy.',
     keyword: 'how to pass algebra 2',
@@ -1540,6 +1570,7 @@ export const posts: Post[] = [
   // ─── PILLAR 4 ─────────────────────────────────────────────────────────────
   {
     slug: 'help-child-math-homework',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Help Your Child With Math Homework (Without the Frustration)',
     metaTitle: 'How to Help Your Child With Math Homework',
     metaDescription: 'Help child with math homework without fights or frustration — practical strategies for parents who want to support without creating dependency.',
@@ -1600,6 +1631,7 @@ export const posts: Post[] = [
   // ─── PILLAR 2 ─────────────────────────────────────────────────────────────
   {
     slug: 'how-to-pass-sat-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Pass the SAT Math Section: Strategies That Actually Work',
     metaTitle: 'How to Pass the SAT Math Section',
     metaDescription: 'How to pass SAT math with strategies that actually work — covering structure, key topics, time management, and proven test-day tactics.',
@@ -1660,6 +1692,7 @@ export const posts: Post[] = [
   // ─── PILLAR 2 ─────────────────────────────────────────────────────────────
   {
     slug: 'college-algebra-help',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'College Algebra Help: How to Pass Your First College Math Class',
     metaTitle: 'College Algebra Help: Pass Your First College Math Class',
     metaDescription: 'College algebra help for students navigating their first college math course — why it\'s harder than high school and exactly how to succeed.',
@@ -1706,6 +1739,7 @@ export const posts: Post[] = [
   // ─── PILLAR 4 ─────────────────────────────────────────────────────────────
   {
     slug: 'my-teenager-hates-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'My Teenager Hates Math: Why It Happens and How to Actually Help',
     metaTitle: 'My Teenager Hates Math: Why It Happens and How to Help',
     metaDescription: 'My teenager hates math — understanding why teens disengage and the specific, evidence-based ways parents can help without creating more resistance.',
@@ -1754,6 +1788,7 @@ export const posts: Post[] = [
   // ─── PILLAR 2 ─────────────────────────────────────────────────────────────
   {
     slug: 'how-to-pass-trigonometry',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Pass Trigonometry: The Complete Student Guide',
     metaDescription: 'How to pass trigonometry with this complete student guide — unit circle mastery, sin/cos/tan, identities, graphing, and proven study strategies.',
     keyword: 'how to pass trigonometry',
@@ -1804,6 +1839,7 @@ export const posts: Post[] = [
   // ─── PILLAR 4 ─────────────────────────────────────────────────────────────
   {
     slug: 'math-anxiety-middle-school',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Math Anxiety in Middle School: Why It Starts and How to Stop It',
     metaTitle: 'Math Anxiety in Middle School: Why It Starts',
     metaDescription: 'Math anxiety middle school — why anxiety peaks in 6th–8th grade, what parents and schools can do differently, and how to stop the cycle early.',
@@ -1854,6 +1890,7 @@ export const posts: Post[] = [
   // ─── PILLAR 4 ─────────────────────────────────────────────────────────────
   {
     slug: 'back-to-school-math-anxiety',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Back to School Math Anxiety: How to Prepare Your Child for Success',
     metaTitle: 'Back to School Math Anxiety: Prepare Your Child',
     metaDescription: 'Back to school math anxiety affects thousands of students each August. Here\'s how parents can prepare their child for a strong math start this year.',
@@ -1906,6 +1943,7 @@ export const posts: Post[] = [
   // ─── PILLAR 2 ─────────────────────────────────────────────────────────────
   {
     slug: 'sat-vs-act-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'SAT vs ACT Math: Which Test Should You Take (And How to Prep for Each)',
     metaTitle: 'SAT vs ACT Math: Which Test Should You Take?',
     metaDescription: 'SAT vs ACT math: learn how each test is structured, which suits your strengths, and how to prep differently for each so you choose the right exam.',
@@ -1967,6 +2005,7 @@ export const posts: Post[] = [
 
   {
     slug: 'how-to-pass-act-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Pass the ACT Math Section: Beat the Clock and the Content',
     metaTitle: 'How to Pass the ACT Math Section',
     metaDescription: 'How to pass ACT math: learn the exact format, pacing strategies, and topic priorities that let you beat both the clock and the content on test day.',
@@ -2029,6 +2068,7 @@ export const posts: Post[] = [
   // ─── PILLAR 4 ─────────────────────────────────────────────────────────────
   {
     slug: 'signs-child-needs-math-tutor',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: '5 Signs Your Child Needs a Math Tutor (And When a Book Works Better)',
     metaTitle: '5 Signs Your Child Needs a Math Tutor',
     metaDescription: 'Signs your child needs a math tutor — and when they do not. Learn the 5 warning signals, how to evaluate tutors, and when structured self-study costs less and works better.',
@@ -2093,6 +2133,7 @@ export const posts: Post[] = [
   // ─── PILLAR 1 ─────────────────────────────────────────────────────────────
   {
     slug: 'why-am-i-so-bad-at-math',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'Why Am I So Bad at Math? The Real Reasons (And What to Do About It)',
     metaTitle: 'Why Am I So Bad at Math? Real Reasons & Fixes',
     metaDescription: 'Why am I so bad at math? Science says it\'s not your brain — it\'s how math was taught. Discover the real causes and specific steps to actually get better.',
@@ -2159,6 +2200,7 @@ export const posts: Post[] = [
 
   {
     slug: 'how-to-pass-calculus',
+    publishedAt: '2026-05-16T08:35:22Z',
     title: 'How to Pass Calculus: A Survival Guide for Struggling Students',
     metaTitle: 'How to Pass Calculus',
     metaDescription: 'Calculus has the highest failure rate of any college math course. Here\'s exactly what struggling students need to do to pass — based on what actually works.',
@@ -2221,6 +2263,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-pass-statistics',
+    publishedAt: '2026-05-16T08:35:22Z',
     title: 'How to Pass Statistics: A Guide for Students Who Are Not Math People',
     metaTitle: 'How to Pass Statistics Class',
     metaDescription: 'Statistics is required for nursing, psychology, business, and dozens of other majors. Here\'s how to pass it even if you\'ve always struggled with math.',
@@ -2289,6 +2332,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-pass-math-without-tutor',
+    publishedAt: '2026-05-16T08:35:22Z',
     title: 'How to Pass Math Without a Tutor: A Free Self-Study Plan',
     metaTitle: 'How to Pass Math Without a Tutor (Free Plan)',
     metaDescription: 'Private math tutors cost $40-120 per hour. You don\'t need one. Here\'s how to pass math on your own with the right system.',
@@ -2352,6 +2396,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-pass-math-exam-last-minute',
+    publishedAt: '2026-05-16T08:35:22Z',
     title: 'How to Pass a Math Exam Last Minute',
     metaTitle: 'How to Pass a Math Exam Last Minute',
     metaDescription: 'Exam in 24-48 hours and you\'re not ready. No lectures about studying earlier — here\'s the most efficient last-minute math exam strategy.',
@@ -2412,6 +2457,7 @@ export const posts: Post[] = [
 
   {
     slug: 'stop-being-bad-at-math',
+    publishedAt: '2026-05-16T12:56:02Z',
     title: 'How to Stop Being Bad at Math (It\'s Not What You Think)',
     metaTitle: 'How to Stop Being Bad at Math — Real Steps That Work',
     pillar: 1,
@@ -2474,6 +2520,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-not-fail-math',
+    publishedAt: '2026-05-16T12:56:02Z',
     title: 'How to Not Fail Math: A Real Recovery Plan for Struggling Students',
     metaTitle: 'How to Not Fail Math — Emergency Recovery Plan That Works',
     pillar: 2,
@@ -2535,6 +2582,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-get-better-at-math-fast',
+    publishedAt: '2026-05-15T13:48:52Z',
     title: 'How to Get Better at Math Fast: The Accelerated Learning System',
     metaTitle: 'How to Get Better at Math Fast — What Actually Works',
     pillar: 2,
@@ -2600,6 +2648,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-pass-math-test-without-studying',
+    publishedAt: '2026-05-16T12:56:02Z',
     title: 'How to Pass a Math Test Without Studying (The Honest Guide)',
     metaTitle: 'How to Pass a Math Test Without Studying — What\'s Actually Possible',
     pillar: 2,
@@ -2657,6 +2706,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'math-study-guide-struggling-students',
+    publishedAt: '2026-05-16T12:56:02Z',
     title: 'The Complete Math Study Guide for Struggling Students',
     metaTitle: 'Math Study Guide for Struggling Students — Complete System',
     pillar: 3,
@@ -2730,6 +2780,7 @@ export const posts: Post[] = [
 
   {
     slug: 'what-to-do-when-you-dont-understand-math',
+    publishedAt: '2026-05-27T03:13:28Z',
     title: 'What to Do When You Don\'t Understand Math: A Step-by-Step Action Plan',
     metaTitle: 'What to Do When You Don\'t Understand Math',
     metaDescription: 'Don\'t understand math and feel lost? Here\'s a practical action plan to pinpoint where you\'re stuck and start making real progress — step by step.',
@@ -2814,6 +2865,7 @@ export const posts: Post[] = [
   },
 {
     slug: 'how-to-catch-up-in-math',
+    publishedAt: '2026-05-16T08:35:22Z',
     title: 'How to Catch Up in Math After Falling Behind (A Step-by-Step Recovery Plan)',
     metaTitle: 'How to Catch Up in Math After Falling Behind',
     metaDescription: 'Fallen behind in math and feel like it\'s too late? Here\'s a step-by-step plan to find the gaps, rebuild the basics, and catch up before your grade tanks.',
@@ -2873,6 +2925,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-get-better-at-math-word-problems',
+    publishedAt: '2026-06-11T10:47:38Z',
     title: 'How to Get Better at Math Word Problems: A Step-by-Step Guide',
     metaTitle: 'How to Get Better at Math Word Problems',
     metaDescription: 'Struggle to turn word problems into equations? Learn how to get better at math word problems with a simple 5-step system, examples, and practice tips.',
@@ -2929,6 +2982,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-stop-careless-mistakes-in-math',
+    publishedAt: '2026-06-30T10:39:21Z',
     title: 'How to Stop Making Careless Mistakes in Math (a Step-by-Step System)',
     metaTitle: 'How to Stop Careless Mistakes in Math',
     metaDescription: 'Keep losing points to careless mistakes in math even when you understand the material? Here\'s a step-by-step system to stop silly errors and protect your grade.',
@@ -3000,6 +3054,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-pass-math-placement-test',
+    publishedAt: '2026-07-06T02:54:03Z',
     title: 'How to Pass a Math Placement Test: A Step-by-Step Plan to Place Higher',
     metaTitle: 'How to Pass a Math Placement Test | Step-by-Step',
     metaDescription: 'Learn how to pass a math placement test like ALEKS or ACCUPLACER. A clear 30-day plan to place out of remedial math, save money, and start college ready.',
@@ -3066,6 +3121,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'why-is-precalculus-so-hard',
+    publishedAt: '2026-07-11T05:11:24Z',
     title: 'Why Is Precalculus So Hard? (And Exactly How to Make It Easier)',
     metaTitle: 'Why Is Precalculus So Hard? How to Make It Easier',
     metaDescription: 'Why is precalculus so hard? The real reasons it trips students up — from the unit circle to rusty algebra — plus a clear plan to finally understand it.',
@@ -3120,6 +3176,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-memorize-the-unit-circle',
+    publishedAt: '2026-07-11T05:11:24Z',
     title: 'How to Memorize the Unit Circle (Without Rote Memorization)',
     metaTitle: 'How to Memorize the Unit Circle the Easy Way',
     metaDescription: 'Learn how to memorize the unit circle the easy way — using the square-root pattern, reference angles, and a sign trick — so trig and precalculus finally click.',
@@ -3173,6 +3230,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-prepare-for-calculus',
+    publishedAt: '2026-07-11T05:11:24Z',
     title: 'How to Prepare for Calculus: The Skills That Actually Matter',
     metaTitle: 'How to Prepare for Calculus Before Day One',
     metaDescription: 'How to prepare for calculus the smart way: the exact precalculus and algebra skills to lock in first, plus a 4-week plan so the class does not blindside you.',
@@ -3228,6 +3286,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-stop-procrastinating-on-math-homework',
+    publishedAt: '2026-07-13T02:48:14Z',
     title: 'How to Stop Procrastinating on Math Homework (and Actually Finish It)',
     metaTitle: 'How to Stop Procrastinating on Math Homework',
     metaDescription: 'Learn how to stop procrastinating on math homework with 8 practical strategies that beat avoidance, kill distractions, and help you finish faster tonight.',
@@ -3414,6 +3473,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-pass-summer-school-math',
+    publishedAt: '2026-07-21T01:53:38Z',
     title: 'How to Pass Summer School Math (Without Losing Your Whole Summer)',
     metaTitle: 'How to Pass Summer School Math: Survival Guide',
     metaDescription: 'Failed math and stuck in summer school? Here is exactly how to pass summer school math in a compressed session, catch up fast, and finally make it stick.',
@@ -3525,6 +3585,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'how-to-do-geometry-proofs',
+    publishedAt: '2026-08-08T06:12:45Z',
     title: 'How to Do Geometry Proofs: A Step-by-Step Guide for Students Who Feel Stuck',
     metaTitle: 'How to Do Geometry Proofs: Step-by-Step Guide',
     metaDescription: 'Learning how to do geometry proofs? This step-by-step method breaks down two-column proofs so struggling students can write any proof with confidence.',
