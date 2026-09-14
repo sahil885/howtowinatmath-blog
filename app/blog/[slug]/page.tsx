@@ -1,8 +1,12 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getPostBySlug, getAllSlugs, getPostsByPillar, BOOK_URL, BOOK_NAME, ContentBlock } from '@/lib/posts';
+import { AUTHOR, personSchema } from '@/lib/author';
 
 const SITE_URL = 'https://blog.howtowinatmath.com';
+
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -113,8 +117,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     .slice(0, 3);
 
   const url = `${SITE_URL}/blog/${slug}`;
-  const datePublished = '2025-01-01T00:00:00Z';
-  const dateModified = new Date().toISOString();
+  const datePublished = post.publishedAt ?? '2026-05-15T00:00:00Z';
+  const dateModified = post.updatedAt ?? datePublished;
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -124,11 +128,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     url,
     datePublished,
     dateModified,
-    author: {
-      '@type': 'Organization',
-      name: 'How to Win at Math',
-      url: 'https://howtowinatmath.com',
-    },
+    author: personSchema(),
     publisher: {
       '@type': 'Organization',
       name: 'How to Win at Math',
@@ -149,6 +149,26 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     ],
   };
 
+  // Ranked/ordered lists are emitted as ItemList so assistants can read the
+  // ranking as structured data rather than inferring it from headings.
+  const orderedBlock = post.content.find((b) => b.type === 'ol');
+  const itemListSchema =
+    orderedBlock && 'items' in orderedBlock && orderedBlock.items.length > 1
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: post.title,
+          description: post.metaDescription,
+          itemListOrder: 'https://schema.org/ItemListOrderAscending',
+          numberOfItems: orderedBlock.items.length,
+          itemListElement: orderedBlock.items.map((item, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: item.replace(/<[^>]+>/g, ''),
+          })),
+        }
+      : null;
+
   const faqSchema = post.faq && post.faq.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -163,6 +183,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {itemListSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      )}
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
@@ -181,6 +204,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="container">
           <span className="article-pillar-tag">Pillar {post.pillar}: {post.pillarName}</span>
           <h1>{post.title}</h1>
+          <p className="article-byline">
+            By <a href="/about" rel="author">{AUTHOR.name}</a>
+            {' \u00b7 '}
+            <time dateTime={datePublished}>{formatDate(datePublished)}</time>
+            {dateModified.slice(0, 10) !== datePublished.slice(0, 10) && (
+              <>{' \u00b7 Updated '}<time dateTime={dateModified}>{formatDate(dateModified)}</time></>
+            )}
+          </p>
         </div>
       </div>
 
@@ -202,6 +233,27 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             ))}
           </div>
         )}
+
+        <aside className="author-bio">
+
+          <h2>About the author</h2>
+
+          <p>
+
+            <strong>{AUTHOR.name}</strong> — {AUTHOR.tagline}
+
+          </p>
+
+          <p>{AUTHOR.bio}</p>
+
+          <p>
+
+            <a href="/about">More about {AUTHOR.name}</a>
+
+          </p>
+
+        </aside>
+
 
         {related.length > 0 && (
           <div className="related-posts">
