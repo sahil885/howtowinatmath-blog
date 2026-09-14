@@ -106,3 +106,36 @@ img { max-width: 100%; height: auto; }
   .posts-grid { grid-template-columns: 1fr; }
   .cta-box { padding: 1.25rem 1rem; }
 }
+
+/* ---- Author identity (byline + end-of-post bio) ---- */
+.article-byline {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+.article-byline a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.author-bio {
+  margin: 3rem 0 1rem;
+  padding: 1.5rem;
+  border-left: 3px solid currentColor;
+  border-radius: 4px;
+  background: rgba(127, 127, 127, 0.07);
+}
+
+.author-bio h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+}
+
+.author-bio p {
+  margin: 0.6rem 0;
+}
