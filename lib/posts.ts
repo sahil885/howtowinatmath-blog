@@ -6,7 +6,8 @@ export type ContentBlock =
   | { type: 'ol'; items: string[] }
   | { type: 'cta-mid' }
   | { type: 'cta-end' }
-  | { type: 'callout'; title: string; text: string };
+  | { type: 'callout'; title: string; text: string }
+  | { type: 'table'; caption?: string; headers: string[]; rows: string[][] };
 
 export interface FaqItem {
   q: string;
