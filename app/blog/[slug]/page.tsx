@@ -102,6 +102,36 @@ function renderBlock(block: ContentBlock, index: number) {
           <RichText text={block.text} />
         </div>
       );
+    case 'table':
+      return (
+        <div key={index} className="table-wrap">
+          <table className="comparison-table">
+            {block.caption && <caption>{block.caption}</caption>}
+            <thead>
+              <tr>
+                {block.headers.map((h, i) => (
+                  <th key={i} scope="col">
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row, r) => (
+                <tr key={r}>
+                  {row.map((cell, c) =>
+                    c === 0 ? (
+                      <th key={c} scope="row" dangerouslySetInnerHTML={{ __html: cell }} />
+                    ) : (
+                      <td key={c} dangerouslySetInnerHTML={{ __html: cell }} />
+                    )
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
     default:
       return null;
   }
