@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
-import { personSchema } from '@/lib/author';
+import { personSchema, bookSchema } from '@/lib/author';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
 const ADSENSE_ID = 'ca-pub-2676272684727826';
@@ -60,6 +60,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(bookSchema()) }}
+        />
       </head>
       <body>
         {/* Google AdSense auto-ads */}
@@ -96,6 +100,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </a>
             <nav aria-label="Main navigation">
               <a href="/">Blog</a>
+              <a href="/for-parents">Parents</a>
+              <a href="/for-high-school-students">High school</a>
+              <a href="/for-college-students">College</a>
               <a href="/about">About</a>
               <a href="https://howtowinatmath.com/" className="btn-nav">Get the Book</a>
             </nav>
@@ -110,6 +117,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </p>
             <nav aria-label="Footer navigation" className="footer-links">
               <a href="/">Blog Home</a>
+              <a href="/for-parents">For parents</a>
+              <a href="/for-high-school-students">For high school students</a>
+              <a href="/for-college-students">For college students</a>
               <a href="/about">About</a>
               {' '}-{' '}
               <a href="https://howtowinatmath.com/">Main Site</a>

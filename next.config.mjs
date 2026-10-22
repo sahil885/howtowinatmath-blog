@@ -29,6 +29,86 @@ const nextConfig = {
 
   redirects: async () => [
     {
+      source: '/blog/stop-being-bad-at-math',
+      destination: '/blog/why-am-i-so-bad-at-math',
+      permanent: true,
+    },
+    {
+      source: '/blog/youre-not-a-math-person-myth',
+      destination: '/blog/why-am-i-so-bad-at-math',
+      permanent: true,
+    },
+    {
+      source: '/blog/math-anxiety-adults',
+      destination: '/blog/how-to-overcome-math-anxiety',
+      permanent: true,
+    },
+    {
+      source: '/blog/how-to-build-confidence-in-math',
+      destination: '/blog/how-to-overcome-math-anxiety',
+      permanent: true,
+    },
+    {
+      source: '/blog/back-to-school-math-anxiety',
+      destination: '/blog/signs-child-has-math-anxiety',
+      permanent: true,
+    },
+    {
+      source: '/blog/how-to-not-fail-math',
+      destination: '/blog/what-to-do-when-failing-math-class',
+      permanent: true,
+    },
+    {
+      source: '/blog/how-to-pass-summer-school-math',
+      destination: '/blog/what-to-do-when-failing-math-class',
+      permanent: true,
+    },
+    {
+      source: '/blog/understand-math-in-class-fail-tests',
+      destination: '/blog/how-to-stop-failing-math-tests',
+      permanent: true,
+    },
+    {
+      source: '/blog/real-reason-you-freeze-on-math-tests',
+      destination: '/blog/how-to-stop-failing-math-tests',
+      permanent: true,
+    },
+    {
+      source: '/blog/how-to-pass-math-test-without-studying',
+      destination: '/blog/how-to-pass-math-exam-last-minute',
+      permanent: true,
+    },
+    {
+      source: '/blog/why-cramming-doesnt-work-for-math',
+      destination: '/blog/how-to-pass-math-exam-last-minute',
+      permanent: true,
+    },
+    {
+      source: '/blog/how-to-study-for-math-test',
+      destination: '/blog/how-to-prepare-for-math-final-exam',
+      permanent: true,
+    },
+    {
+      source: '/blog/how-to-raise-math-grade-fast',
+      destination: '/blog/how-to-get-better-at-math-fast',
+      permanent: true,
+    },
+    {
+      source: '/blog/help-child-math-homework',
+      destination: '/blog/how-to-help-child-with-math',
+      permanent: true,
+    },
+    {
+      source: '/blog/why-is-precalculus-so-hard',
+      destination: '/blog/how-to-pass-precalculus',
+      permanent: true,
+    },
+    {
+      source: '/blog/how-to-prepare-for-calculus',
+      destination: '/blog/how-to-pass-calculus',
+      permanent: true,
+    },
+    {
       source: '/blog',
       destination: '/',
       permanent: true,

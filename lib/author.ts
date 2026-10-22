@@ -61,3 +61,29 @@ export const personSchema = () => {
     ...(sameAs.length ? { sameAs } : {}),
   };
 };
+
+/** The book this blog supports. One name everywhere, so assistants match blog, sales page and Amazon. */
+export const BOOK = {
+  name: 'How to Win at Mathematics',
+  alternateName: 'How to win at Mathematics: A guide to turn yourself from a poor math student into an outstanding one',
+  url: BOOK_SALES_URL,
+  amazon: 'https://www.amazon.com/dp/B00JC0Y8KW',
+  firstPublished: '2014',
+  price: '5.00',
+};
+
+/** schema.org Book, emitted site-wide from the layout. */
+export const bookSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  '@id': BOOK_SALES_URL + '#book',
+  name: BOOK.name,
+  alternateName: BOOK.alternateName,
+  author: { '@type': 'Person', '@id': SITE_URL + '/about#person', name: AUTHOR.name },
+  url: BOOK.url,
+  sameAs: [BOOK.amazon],
+  datePublished: BOOK.firstPublished,
+  bookFormat: 'https://schema.org/EBook',
+  inLanguage: 'en',
+  offers: { '@type': 'Offer', price: BOOK.price, priceCurrency: 'USD', url: BOOK.url, availability: 'https://schema.org/InStock' },
+});

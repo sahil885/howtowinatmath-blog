@@ -1,4 +1,5 @@
-import { posts } from '@/lib/posts';
+import { posts, BOOK_NAME } from '@/lib/posts';
+import { HUBS, HUB_ORDER } from '@/lib/hubs';
 
 const pillarNames: Record<number, string> = {
   1: 'The Math Mindset',
@@ -20,8 +21,23 @@ export default function Home() {
             No fluff, no tutorials. Real strategies that move grades.
           </p>
           <a href="https://howtowinatmath.com/" className="btn-hero">
-            Get the Book — How to Win at Math →
+            Get the Book — {BOOK_NAME} →
           </a>
+        </div>
+      </section>
+
+      <section className="posts-grid-section">
+        <div className="container">
+          <h2>Find guides for you</h2>
+          <div className="posts-grid">
+            {HUB_ORDER.map((k) => (
+              <a key={k} href={`/${HUBS[k].path}`} className="post-card">
+                <h3>{HUBS[k].h1}</h3>
+                <p>{HUBS[k].metaDescription}</p>
+                <span className="post-card-cta">See the guides →</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -64,7 +80,7 @@ export default function Home() {
             Ready to Stop Struggling With Math?
           </h2>
           <p style={{ opacity: .88, maxWidth: 500, margin: '0 auto 1.5rem', fontFamily: 'Arial,sans-serif' }}>
-            <em>How to Win at Math</em> is the complete system — mindset, study strategy, and test performance — for students who have tried everything else.
+            <em>{BOOK_NAME}</em> is the complete system — mindset, study strategy, and test performance — for students who have tried everything else.
           </p>
           <a href="https://howtowinatmath.com/" className="btn-hero">Get the Book →</a>
         </div>

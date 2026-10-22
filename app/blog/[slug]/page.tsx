@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getPostBySlug, getAllSlugs, getPostsByPillar, BOOK_URL, BOOK_NAME, ContentBlock } from '@/lib/posts';
+import { getPostBySlug, getAllSlugs, getPostsByPillar, BOOK_URL, BOOK_NAME, ContentBlock, type Audience } from '@/lib/posts';
 import { AUTHOR, personSchema } from '@/lib/author';
 
 const SITE_URL = 'https://blog.howtowinatmath.com';
@@ -40,25 +40,48 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-function CtaMid() {
+const CTA: Record<Audience, { mid: [string, string]; end: [string, string] }> = {
+  parents: {
+    mid: ['Buying this for your son or daughter?', `${BOOK_NAME} gives your teen a step-by-step system for mindset, study method and test day, so math stops being a nightly fight. It is a $5 ebook, risk-free for 30 days.`],
+    end: ['Give your teen a system instead of another lecture.', `${BOOK_NAME} turns advice like this guide into a plan your teen can follow on their own.`],
+  },
+  'senior-high': {
+    mid: ['Studying hard and still failing tests?', `${BOOK_NAME} is the study and test system Sahil Bora built after struggling with math in his final years of high school. It is a $5 ebook, risk-free for 30 days.`],
+    end: ['Your next test is a chance to start over.', `${BOOK_NAME} gives you the mindset, study method and test strategy to make it count.`],
+  },
+  university: {
+    mid: ['From poor high school results to top marks in university engineering maths.', `${BOOK_NAME} is the system Sahil Bora used to make that jump: mindset, study method and exam strategy in one plan. It is a $5 ebook, risk-free for 30 days.`],
+    end: ['College math rewards a system, not more hours.', `${BOOK_NAME} shows you how to study, practice and sit exams in courses that move fast.`],
+  },
+  all: {
+    mid: ['Tired of math tips that do not stick?', `${BOOK_NAME} is a complete system for mindset, study method and test strategy, written for students who feel math just is not for them. It is a $5 ebook, risk-free for 30 days.`],
+    end: ['The fastest way to stop struggling is a system built for people like you.', `${BOOK_NAME} puts mindset, study method and test strategy into one plan you can start tonight.`],
+  },
+};
+
+const HUB_LINK: Partial<Record<Audience, [string, string]>> = {
+  parents: ['/for-parents', 'More guides for parents'],
+  'senior-high': ['/for-high-school-students', 'More guides for high school students'],
+  university: ['/for-college-students', 'More guides for college students'],
+};
+
+function CtaMid({ audience }: { audience: Audience }) {
+  const [title, text] = CTA[audience].mid;
   return (
     <div className="cta-box">
-      <strong>Struggling with math and tired of tips that don&rsquo;t stick?</strong>
-      <p>
-        <em>{BOOK_NAME}</em> is the complete system — mindset, study approach, and test strategy — built specifically for students who feel like math just isn&rsquo;t for them. Thousands of students have used it to go from failing to passing.
-      </p>
-      <a href={BOOK_URL} className="btn-cta">Get the Book</a>
+      <strong>{title}</strong>
+      <p>{text}</p>
+      <a href={BOOK_URL} className="btn-cta">Get the $5 ebook</a>
     </div>
   );
 }
 
-function CtaEnd() {
+function CtaEnd({ audience }: { audience: Audience }) {
+  const [title, text] = CTA[audience].end;
   return (
     <div className="cta-box cta-end">
-      <strong>The fastest way to stop struggling is to use a system built for people like you.</strong>
-      <p>
-        <em>{BOOK_NAME}</em> was written for students who&rsquo;ve tried everything and still can&rsquo;t make math click. It&rsquo;s the system thousands of students wish they had sooner.
-      </p>
+      <strong>{title}</strong>
+      <p>{text}</p>
       <a href={BOOK_URL} className="btn-cta">Get Your Copy at HowToWinAtMath.com</a>
     </div>
   );
@@ -71,7 +94,7 @@ function RichText({ text }: { text: string }) {
   return <p>{text}</p>;
 }
 
-function renderBlock(block: ContentBlock, index: number) {
+function renderBlock(block: ContentBlock, index: number, audience: Audience) {
   switch (block.type) {
     case 'p':
       return <RichText key={index} text={block.text} />;
@@ -92,9 +115,9 @@ function renderBlock(block: ContentBlock, index: number) {
         </ol>
       );
     case 'cta-mid':
-      return <CtaMid key={index} />;
+      return <CtaMid key={index} audience={audience} />;
     case 'cta-end':
-      return <CtaEnd key={index} />;
+      return <CtaEnd key={index} audience={audience} />;
     case 'callout':
       return (
         <div key={index} className="callout-box">
@@ -132,6 +155,21 @@ function renderBlock(block: ContentBlock, index: number) {
           </table>
         </div>
       );
+    case 'video':
+      return (
+        <figure key={index} className="video-embed">
+          <div className="video-frame">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${block.id}`}
+              title={block.title}
+              loading="lazy"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <figcaption>{block.caption ?? `Video: ${block.title}`}</figcaption>
+        </figure>
+      );
     default:
       return null;
   }
@@ -141,6 +179,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+  const audience: Audience = post.audience ?? 'all';
+  const hubLink = HUB_LINK[audience];
 
   const related = getPostsByPillar(post.pillar)
     .filter((p) => p.slug !== post.slug)
@@ -248,6 +288,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <>{' \u00b7 Updated '}<time dateTime={dateModified}>{formatDate(dateModified)}</time></>
             )}
           </p>
+          {hubLink && (
+            <p className="article-audience">
+              <a href={hubLink[0]}>{hubLink[1]} →</a>
+            </p>
+          )}
         </div>
       </div>
 
@@ -255,7 +300,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <meta itemProp="headline" content={post.title} />
         <meta itemProp="description" content={post.metaDescription} />
         <div itemProp="articleBody">
-          {post.content.map((block, i) => renderBlock(block, i))}
+          {post.content.map((block, i) => renderBlock(block, i, audience))}
         </div>
 
         {post.faq && post.faq.length > 0 && (
