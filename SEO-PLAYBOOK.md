@@ -48,10 +48,21 @@ US English first (53% of search impressions). Use "maths" only where the query d
 
 ## Publishing
 - `main` deploys to Vercel automatically.
-- Push from the session's clone. Cloud sessions can read this repo, but pushes are refused (HTTP 403) until the Claude GitHub app is installed on it. Record here when that changes.
-- If the push is refused: create a git bundle and a patch of the commit in the outputs folder, send both to Sahil, and stop. He pushes them himself.
+- The Claude GitHub app is installed on this repo (since 22 Oct 2026), so sessions can push. Commit on a branch, push it, open a pull request into main and merge it with `gh api`.
+- If the merge is refused or blocked, leave the pull request open and send Sahil its link. If the push itself is refused, put a git bundle and a patch of the commit in the outputs folder, send both to Sahil, and stop.
 - Never look for, read or use GitHub tokens or other credentials.
 
 ## STORIES
-Sahil adds true stories here. Use only these for first-person detail.
-- From the published bio: struggled with math in his final years of high school, spent months researching how to learn it, went from poor high school results to outstanding marks in university engineering mathematics, and wrote the book (first published 2014).
+Sahil's own account, from the first chapter of the book. Use only these for first-person detail, and keep them accurate. For US readers, explain the Australian terms in passing: VCE is the Year 11-12 certificate in Victoria, Mathematical Methods is the VCE subject covering functions, calculus and probability, and the ATAR is the university entry rank.
+
+1. He struggled with maths through high school, especially his last two years. Entry to engineering and computer science required VCE Mathematical Methods.
+2. He wanted to take Specialist Maths, the highest level of high school maths, in Year 11. The maths coordinator saw his average Year 10 grades and made him drop it.
+3. In Year 12 Mathematical Methods he failed almost every test despite trying his best. His teacher thought he wasn't trying and didn't expect him to pull through.
+4. Before the final exams he had one-on-one tutoring outside school. Through September and October his life was school, tutoring, exam study and a part-time job, with no social life.
+5. He worked through more than 50 practice exams, about one a day from September until the day before the first exam.
+6. Exam 1 (no calculator): he felt confident until question 4, a probability question that needed thinking outside the box. Two later probability questions he could have done on a calculator had to be done by hand, and he couldn't write the steps because he didn't understand them.
+7. Exam 2 (calculator and notes allowed) went worse. The questions were long, wordy and full of jargon. He tried to apply concepts he didn't deeply understand and ended up writing memorized solutions from practice exams. His hopes for the subject went down the drain.
+8. He finished VCE in 2012 with disappointing results but still got into RMIT University. University was a fresh start: nobody cared about his ATAR, which is just a number to get into a course.
+9. At RMIT he experimented with ways to learn, taking notes on what worked, what didn't and which methods helped most. Those notes became the book's guidelines. He went from failing maths in high school to doing well in university mathematics (outstanding marks in engineering mathematics, per his bio).
+
+Leave out how he got the practice exams (a shared file of commercial papers): posts must not suggest sharing paid exam papers.
