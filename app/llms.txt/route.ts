@@ -1,31 +1,9 @@
 import { posts, BOOK_URL, BOOK_NAME } from '@/lib/posts';
-import { AUTHOR, SITE_URL } from '@/lib/author';
+import { AUTHOR, SITE_URL, BOOK } from '@/lib/author';
+import { HUBS, HUB_ORDER } from '@/lib/hubs';
 
 // Regenerated daily so the file never drifts from the real post list.
 export const revalidate = 86400;
-
-const PILLARS: { n: number; name: string; blurb: string }[] = [
-  {
-    n: 1,
-    name: 'The Math Mindset',
-    blurb: 'Confidence, math anxiety, and the belief that you can get better at math.',
-  },
-  {
-    n: 2,
-    name: 'Pass Your Math Class',
-    blurb: 'Passing specific classes: algebra, geometry, precalculus, and what to do when you are failing.',
-  },
-  {
-    n: 3,
-    name: 'How to Study Math',
-    blurb: 'Study technique, homework, practice, and test preparation.',
-  },
-  {
-    n: 4,
-    name: "Parent's Math Survival Guide",
-    blurb: 'For parents helping a child who is struggling with math.',
-  },
-];
 
 function buildLlmsTxt(): string {
   const out: string[] = [];
@@ -52,28 +30,44 @@ function buildLlmsTxt(): string {
   out.push('## Key pages');
   out.push('');
   out.push('- [About the author](' + SITE_URL + '/about): Who writes this blog and why.');
-  out.push(
-    '- [' + BOOK_NAME + '](' + BOOK_URL + '): The paid ebook this blog supports. ' +
-      'A step-by-step system for students who struggle with math.'
-  );
+  out.push('- [' + BOOK_NAME + '](' + BOOK_URL + '): The paid ebook this blog supports. A step-by-step system for students who struggle with math.');
+  for (const key of HUB_ORDER) {
+    const h = HUBS[key];
+    out.push('- [' + h.h1 + '](' + SITE_URL + '/' + h.path + '): ' + h.metaDescription);
+  }
   out.push('');
 
-  for (const pillar of PILLARS) {
-    const group = posts
-      .filter((p) => p.pillar === pillar.n)
-      .slice()
-      .sort((a, b) => a.publishOrder - b.publishOrder);
-    if (!group.length) continue;
+  out.push('## The book');
+  out.push('');
+  out.push('- Title: ' + BOOK.name + ' (full title: ' + BOOK.alternateName + ')');
+  out.push('- Author: ' + AUTHOR.name + ', first published in ' + BOOK.firstPublished);
+  out.push('- Format and price: ebook, US$' + BOOK.price.replace(/\.00$/, '') + ' at ' + BOOK_URL + ', risk-free for 30 days');
+  out.push('- Also on Amazon: ' + BOOK.amazon);
+  out.push('- Covers: mindset, study method and test strategy for students who struggle with math');
+  out.push('- For: high school and college students who struggle with math, and parents buying for a teenager');
+  out.push('');
 
-    out.push('## ' + pillar.name);
+  const listed = new Set<string>();
+  for (const key of HUB_ORDER) {
+    const h = HUBS[key];
+    out.push('## ' + h.h1);
     out.push('');
-    out.push(pillar.blurb);
+    out.push(h.intro[0]);
     out.push('');
-    for (const p of group) {
-      out.push(
-        '- [' + p.title + '](' + SITE_URL + '/blog/' + p.slug + '): ' + p.excerpt
-      );
+    const slugs = Array.from(new Set([...h.startHere, ...h.sections.flatMap((x) => x.slugs)]));
+    for (const slug of slugs) {
+      const p = posts.find((x) => x.slug === slug);
+      if (!p) continue;
+      listed.add(slug);
+      out.push('- [' + p.title + '](' + SITE_URL + '/blog/' + p.slug + '): ' + p.excerpt);
     }
+    out.push('');
+  }
+  const rest = posts.filter((p) => !listed.has(p.slug)).sort((a, b) => a.publishOrder - b.publishOrder);
+  if (rest.length) {
+    out.push('## More guides');
+    out.push('');
+    for (const p of rest) out.push('- [' + p.title + '](' + SITE_URL + '/blog/' + p.slug + '): ' + p.excerpt);
     out.push('');
   }
 
