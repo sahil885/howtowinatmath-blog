@@ -3,6 +3,7 @@
 Newest first in each log. Decisions here override SEO-PLAYBOOK.md.
 
 ## Decisions
+- 2026-10-22: STORIES in SEO-PLAYBOOK.md filled from the book's first chapter. Publishing now goes through pull requests (Claude GitHub app installed).
 - 2026-10-22: what-science-says-about-being-bad-at-math stays a separate post (it had a click, and the rule keeps pages with clicks). Re-angled to "Will I ever get better at math?".
 - 2026-10-22: CTA copy no longer claims "thousands of students" (unverified).
 
