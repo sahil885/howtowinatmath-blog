@@ -3,6 +3,8 @@
 Newest first in each log. Decisions here override SEO-PLAYBOOK.md.
 
 ## Decisions
+- 2026-10-26: Chrome/Claude extension was offline this run (built-in browser not signed into Google either), so Search Console (unindexed list, target positions) and GA4 (sessions, purchases) could not be pulled. STEP 1 item 1 needs real GSC queries, so the main change fell to STEP 1 item 2: an unindexed post still missing its asset.
+- 2026-10-26: Playbook Publishing section updated to match STEP 4 (branch/PR/merge via gh api, commit-status wait, IndexNow via Bing page). First-run housekeeping.
 - 2026-10-22: STORIES in SEO-PLAYBOOK.md filled from the book's first chapter. Publishing now goes through pull requests (Claude GitHub app installed).
 - 2026-10-22: what-science-says-about-being-bad-at-math stays a separate post (it had a click, and the rule keeps pages with clicks). Re-angled to "Will I ever get better at math?".
 - 2026-10-22: CTA copy no longer claims "thousands of students" (unverified).
@@ -39,7 +41,7 @@ Baseline: 13 on 12 Oct; 6 left after the merges. Links added 2026-10-22; Sahil t
 - [ ] best-math-books-struggling-students (discovered): links from how-to-help-child-with-math, math-tutor-vs-math-book and the parents hub
 - [ ] how-to-memorize-the-unit-circle (discovered): links from precalculus, trigonometry, calculus and two hubs
 - [ ] how-to-pass-math-placement-test (discovered): links from college math, college algebra, adult skills and the college hub
-- [ ] how-to-do-geometry-proofs (crawled): link from geometry and the high school hub; still needs a worked proof
+- [x] how-to-do-geometry-proofs: full two-column proof table added (midpoint + vertical angles → SAS, with the CPCTC finish explained), updatedAt bumped (2026-10-26). Back-link from how-to-pass-geometry and high-school hub already in place. Sahil to request indexing.
 - [ ] how-to-get-better-at-math-word-problems (crawled): links from get-better-fast, algebra 1 and the high school hub; still needs a worked example
 - [ ] how-to-stop-procrastinating-on-math-homework (crawled): links from catch-up, study guide, teenager-hates-math and two hubs; still needs a checklist
 
@@ -62,4 +64,9 @@ Baseline: 13 on 12 Oct; 6 left after the merges. Links added 2026-10-22; Sahil t
 (Phase 5, not started)
 
 ## Run log
+- 2026-10-26 run: main change = worked two-column proof table added to how-to-do-geometry-proofs (crawled-not-indexed; keyword "how to do geometry proofs"; reader senior-high; US geometry finals season). Gives the post the canonical extractable asset it was missing. Small fixes: trimmed over-length metaTitles on college-algebra-help (56→49) and math-study-guide-struggling-students (58→40); trimmed that post's metaDescription (161→153) and the signs-child-needs-math-tutor excerpt (176→148) into spec. Updated playbook Publishing section to STEP 4. Build passed (`npx next build`); 0 hard field/link/slug violations; all /blog/ links resolve.
+  - Step 0a: sales-page `<title>`/`og:title` = "How to Win at Mathematics - Master Math Learning | $5 eBook"; meta description present; "Math Mastery" is GONE (Base44 fix landed).
+  - Step 0b: IndexNow key file at /6385cfb34d5e4f5103084bd51a7211b8.txt returns `6385cfb34d5e4f5103084bd51a7211b8` (matches filename).
+  - Step 0c/0d/0e: NOT retrieved — Claude in Chrome offline and built-in browser not signed into Google. Unindexed-post link additions (0c) and the four target positions (0d) and GA4 sessions/purchases (0e) deferred to a run with Chrome connected.
+  - Spare-edit backlog (needs query data): 20 posts have metaDescription under 150 chars (121-148): how-to-pass-algebra-1-high-school, what-to-do-when-failing-math-class, how-to-pass-college-math, how-to-prepare-for-math-final-exam, how-to-overcome-math-anxiety, i-used-to-hate-math-heres-what-changed, how-to-remember-math-formulas, best-way-to-practice-math-at-home, how-to-help-child-with-math, signs-child-has-math-anxiety, how-to-pass-algebra-2, how-to-pass-sat-math, college-algebra-help, my-teenager-hates-math, how-to-pass-trigonometry, math-anxiety-middle-school, sat-vs-act-math, how-to-pass-act-math, how-to-pass-math-without-tutor, what-to-do-when-you-dont-understand-math.
 - 2026-10-22 setup sprint: 16 merges with redirects (60 to 44 posts); audience tags on all posts and audience CTAs; hubs at /for-parents, /for-high-school-students and /for-college-students; Book schema; llms.txt grouped by audience with book facts; video block and 4 Shorts embedded; links to the 6 unindexed posts; meta updates (geometry, failing tests, last-minute, what-science-says). Build passed.
