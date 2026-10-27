@@ -48,8 +48,12 @@ US English first (53% of search impressions). Use "maths" only where the query d
 
 ## Publishing
 - `main` deploys to Vercel automatically.
-- The Claude GitHub app is installed on this repo (since 22 Oct 2026), so sessions can push. Commit on a branch, push it, open a pull request into main and merge it with `gh api`.
-- If the merge is refused or blocked, leave the pull request open and send Sahil its link. If the push itself is refused, put a git bundle and a patch of the commit in the outputs folder, send both to Sahil, and stop.
+- The Claude GitHub app is installed on this repo (since 22 Oct 2026), so sessions can push.
+- Update SEO-QUEUE.md in the same commit: tick the item, add new candidates, append this run's Step 0 numbers to the run log.
+- Commit on a new branch named `seo-run-YYYY-MM-DD` and push it.
+- Open a pull request into main with `gh api repos/sahil885/howtowinatmath-blog/pulls --method POST`, then merge it with `gh api repos/sahil885/howtowinatmath-blog/pulls/<number>/merge --method PUT`.
+- If the merge is refused or blocked, leave the pull request open, send Sahil its link, and stop. If the push itself is refused, write a git bundle and a patch of the commit to the outputs folder, send both to Sahil, and stop.
+- After a successful merge, wait until `gh api repos/sahil885/howtowinatmath-blog/commits/main/status` reports success, load each changed URL to confirm it renders, then submit the changed URLs to IndexNow: in Chrome, open https://www.bing.com/indexnow and from that page POST JSON to /indexnow with host `blog.howtowinatmath.com`, key `6385cfb34d5e4f5103084bd51a7211b8`, keyLocation `https://blog.howtowinatmath.com/6385cfb34d5e4f5103084bd51a7211b8.txt` and urlList (200 or 202 = accepted).
 - Never look for, read or use GitHub tokens or other credentials.
 
 ## STORIES
