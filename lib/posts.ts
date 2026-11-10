@@ -216,7 +216,7 @@ export const posts: Post[] = [
     audience: 'university',
     publishOrder: 2,
     content: [
-      { type: 'p', text: 'Community colleges across the United States see 40–60% of students fail or withdraw from required math courses every semester. At four-year universities, college algebra alone has failure rates above 30% at many institutions. These aren\'t students who are unintelligent — they\'re students who were never taught how to actually learn math.' },
+      { type: 'p', text: 'Required math courses, especially gateway courses like college algebra, precalculus and first-semester calculus, are among the most commonly failed and withdrawn classes on many campuses. These aren\'t students who are unintelligent — they\'re students who were never taught how to actually learn math.' },
       { type: 'p', text: 'Knowing how to pass college math class requires understanding why it\'s different from high school math — and adjusting your approach accordingly. Here\'s what that looks like.' },
       { type: 'h2', text: 'Understand Why College Math Is Different' },
       { type: 'p', text: 'A high school math class might spend two weeks on one topic. A college class covers the same material in two or three lectures. There\'s no daily homework check, no parent contact, no gentle reminders. The professor teaches the material once and moves on. You are expected to be an independent learner.' },
