@@ -29,7 +29,7 @@ export const HUBS: Record<HubKey, Hub> = {
     ],
     startHere: ['my-child-is-failing-math', 'how-to-help-child-with-math', 'signs-child-needs-math-tutor', 'math-tutor-vs-math-book'],
     sections: [
-      { heading: 'If your child is struggling or failing', slugs: ['my-child-is-failing-math', 'my-teenager-hates-math', 'what-to-do-when-failing-math-class', 'how-to-catch-up-in-math'] },
+      { heading: 'If your child is struggling or failing', slugs: ['my-child-is-failing-math', 'my-teenager-hates-math', 'my-college-student-is-failing-math', 'what-to-do-when-failing-math-class', 'how-to-catch-up-in-math'] },
       { heading: 'Math anxiety and confidence', slugs: ['signs-child-has-math-anxiety', 'math-anxiety-middle-school', 'how-to-overcome-math-anxiety'] },
       { heading: 'Helping at home', slugs: ['how-to-help-child-with-math', 'best-way-to-practice-math-at-home', 'how-to-stop-procrastinating-on-math-homework'] },
       { heading: 'Tutors, books and resources', slugs: ['signs-child-needs-math-tutor', 'math-tutor-vs-math-book', 'khan-academy-vs-math-book', 'best-math-books-struggling-students', 'math-resources-struggling-students'] },
