@@ -57,7 +57,7 @@ export const HUBS: Record<HubKey, Hub> = {
     startHere: ['how-to-stop-failing-math-tests', 'what-to-do-when-failing-math-class', 'how-to-pass-precalculus', 'how-to-pass-math-exam-last-minute'],
     sections: [
       { heading: 'Pass your class', slugs: ['how-to-pass-algebra-1-high-school', 'how-to-pass-algebra-2', 'how-to-pass-geometry', 'how-to-do-geometry-proofs', 'how-to-pass-precalculus', 'how-to-pass-trigonometry', 'how-to-memorize-the-unit-circle'] },
-      { heading: 'Tests, finals and the SAT or ACT', slugs: ['how-to-stop-failing-math-tests', 'how-to-prepare-for-math-final-exam', 'how-to-pass-math-exam-last-minute', 'how-to-stop-careless-mistakes-in-math', 'how-to-pass-sat-math', 'how-to-pass-act-math', 'sat-vs-act-math'] },
+      { heading: 'Tests, finals and the SAT or ACT', slugs: ['how-to-stop-failing-math-tests', 'how-to-prepare-for-math-final-exam', 'algebra-2-final-exam-study-plan', 'how-to-pass-math-exam-last-minute', 'how-to-stop-careless-mistakes-in-math', 'how-to-pass-sat-math', 'how-to-pass-act-math', 'sat-vs-act-math'] },
       { heading: 'If you are behind', slugs: ['what-to-do-when-failing-math-class', 'how-to-catch-up-in-math', 'what-to-do-when-you-dont-understand-math', 'how-to-stop-procrastinating-on-math-homework', 'how-to-get-better-at-math-word-problems'] },
       { heading: 'Mindset', slugs: ['why-am-i-so-bad-at-math', 'how-to-overcome-math-anxiety', 'i-used-to-hate-math-heres-what-changed'] },
     ],
