@@ -1,5 +1,6 @@
 import { posts, BOOK_NAME } from '@/lib/posts';
 import { HUBS, HUB_ORDER } from '@/lib/hubs';
+import { BOOK_FACTS_LINE, BOOK_FACTS_SHORT } from '@/lib/book';
 
 const pillarNames: Record<number, string> = {
   1: 'The Math Mindset',
@@ -20,9 +21,10 @@ export default function Home() {
             Practical guides for students who struggle with math — and the parents who want to help them.
             No fluff, no tutorials. Real strategies that move grades.
           </p>
-          <a href="https://howtowinatmath.com/" className="btn-hero">
+          <a href="https://howtowinatmath.com/" className="btn-hero" data-cta="home-hero">
             Get the Book — {BOOK_NAME} →
           </a>
+          <p className="hero-facts">{BOOK_FACTS_SHORT}</p>
         </div>
       </section>
 
@@ -82,7 +84,8 @@ export default function Home() {
           <p style={{ opacity: .88, maxWidth: 500, margin: '0 auto 1.5rem', fontFamily: 'Arial,sans-serif' }}>
             <em>{BOOK_NAME}</em> is the complete system — mindset, study strategy, and test performance — for students who have tried everything else.
           </p>
-          <a href="https://howtowinatmath.com/" className="btn-hero">Get the Book →</a>
+          <a href="https://howtowinatmath.com/" className="btn-hero" data-cta="home-bottom">Get the Book →</a>
+          <p className="hero-facts">{BOOK_FACTS_LINE}</p>
         </div>
       </section>
     </>
