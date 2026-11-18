@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getPostBySlug, BOOK_URL } from '@/lib/posts';
 import { HUBS, type HubKey } from '@/lib/hubs';
 import { SITE_URL } from '@/lib/author';
+import { BOOK_FACTS_LINE } from '@/lib/book';
 
 export function hubMetadata(key: HubKey): Metadata {
   const h = HUBS[key];
@@ -86,7 +87,8 @@ export default function HubPage({ hub }: { hub: HubKey }) {
           <div className="cta-box">
             <strong>{h.pitch[0]}</strong>
             <p>{h.pitch[1]}</p>
-            <a href={BOOK_URL} className="btn-cta">Get the $5 ebook</a>
+            <a href={BOOK_URL} className="btn-cta" data-cta="hub">Get the $5 ebook</a>
+            <p className="cta-facts">{BOOK_FACTS_LINE}</p>
           </div>
           <div className="faq-section">
             <h2>Frequently Asked Questions</h2>

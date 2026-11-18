@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import { personSchema, bookSchema } from '@/lib/author';
+import BookClickTracker from '@/app/_components/BookClickTracker';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
 const ADSENSE_ID = 'ca-pub-2676272684727826';
@@ -96,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
         <header className="site-header">
           <div className="container">
-            <a href="https://howtowinatmath.com/" className="logo" aria-label="How to Win at Math - Home">
+            <a href="https://howtowinatmath.com/" className="logo" aria-label="How to Win at Math - Home" data-cta="logo">
               How to Win at Math
             </a>
             <nav aria-label="Main navigation">
@@ -105,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/for-high-school-students">High school</a>
               <a href="/for-college-students">College</a>
               <a href="/about">About</a>
-              <a href="https://howtowinatmath.com/" className="btn-nav">Get the Book</a>
+              <a href="https://howtowinatmath.com/" className="btn-nav" data-cta="header">Get the Book</a>
             </nav>
           </div>
         </header>
@@ -114,7 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container">
             <p>
               <strong>How to Win at Math</strong> — The complete system for students who struggle with math.{' '}
-              <a href="https://howtowinatmath.com/">Get the book</a>
+              <a href="https://howtowinatmath.com/" data-cta="footer">Get the book</a>
             </p>
             <nav aria-label="Footer navigation" className="footer-links">
               <a href="/">Blog Home</a>
@@ -123,10 +124,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/for-college-students">For college students</a>
               <a href="/about">About</a>
               {' '}-{' '}
-              <a href="https://howtowinatmath.com/">Main Site</a>
+              <a href="https://howtowinatmath.com/" data-cta="footer">Main Site</a>
             </nav>
           </div>
         </footer>
+        <BookClickTracker />
         <Analytics />
       </body>
     </html>
