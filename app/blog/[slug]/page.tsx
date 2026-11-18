@@ -1,7 +1,10 @@
+import { Fragment } from 'react';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getPostBySlug, getAllSlugs, getPostsByPillar, BOOK_URL, BOOK_NAME, ContentBlock, type Audience } from '@/lib/posts';
 import { AUTHOR, personSchema } from '@/lib/author';
+import { BOOK_FACTS_LINE, BOOK_FACTS_SHORT, BOOK_INSIDE } from '@/lib/book';
+import StickyBookBar from '@/app/_components/StickyBookBar';
 
 const SITE_URL = 'https://blog.howtowinatmath.com';
 
@@ -40,21 +43,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-const CTA: Record<Audience, { mid: [string, string]; end: [string, string] }> = {
+// Call-to-action copy per reader. Product facts live in lib/book.ts and are
+// checked against the live sales page; keep claims out of this copy.
+const CTA: Record<Audience, { top: [string, string]; mid: [string, string]; end: [string, string] }> = {
   parents: {
-    mid: ['Buying this for your son or daughter?', `${BOOK_NAME} gives your teen a step-by-step system for mindset, study method and test day, so math stops being a nightly fight. It is a $5 ebook, risk-free for 30 days.`],
+    top: ['Want a plan your teen can follow on their own?', `${BOOK_NAME} is a short, plain-language system for note-taking, understanding and exams, written by an author who struggled with math in high school himself.`],
+    mid: ['Buying this for your son or daughter?', `${BOOK_NAME} gives your teen a step-by-step system for mindset, study method and test day, so math stops being a nightly fight. Inside:`],
     end: ['Give your teen a system instead of another lecture.', `${BOOK_NAME} turns advice like this guide into a plan your teen can follow on their own.`],
   },
   'senior-high': {
-    mid: ['Studying hard and still failing tests?', `${BOOK_NAME} is the study and test system Sahil Bora built after struggling with math in his final years of high school. It is a $5 ebook, risk-free for 30 days.`],
+    top: ['Want the whole system in one place?', `This guide covers one problem. ${BOOK_NAME} is the full study and test system Sahil Bora built after struggling with math in high school.`],
+    mid: ['Studying hard and still failing tests?', `${BOOK_NAME} is the study and test system Sahil Bora built after struggling with math in his final years of high school. Inside:`],
     end: ['Your next test is a chance to start over.', `${BOOK_NAME} gives you the mindset, study method and test strategy to make it count.`],
   },
   university: {
-    mid: ['From poor high school results to top marks in university engineering maths.', `${BOOK_NAME} is the system Sahil Bora used to make that jump: mindset, study method and exam strategy in one plan. It is a $5 ebook, risk-free for 30 days.`],
+    top: ['Want the whole system in one place?', `This guide covers one problem. ${BOOK_NAME} is the full system Sahil Bora used to go from poor high school results to top marks in university engineering maths.`],
+    mid: ['From poor high school results to top marks in university engineering maths.', `${BOOK_NAME} is the system Sahil Bora used to make that jump: mindset, study method and exam strategy in one plan. Inside:`],
     end: ['College math rewards a system, not more hours.', `${BOOK_NAME} shows you how to study, practice and sit exams in courses that move fast.`],
   },
   all: {
-    mid: ['Tired of math tips that do not stick?', `${BOOK_NAME} is a complete system for mindset, study method and test strategy, written for students who feel math just is not for them. It is a $5 ebook, risk-free for 30 days.`],
+    top: ['Want the whole system in one place?', `This guide covers one problem. ${BOOK_NAME} is Sahil Bora's full system for note-taking, understanding and exams.`],
+    mid: ['Tired of math tips that do not stick?', `${BOOK_NAME} is a complete system for mindset, study method and test strategy, written for students who feel math just is not for them. Inside:`],
     end: ['The fastest way to stop struggling is a system built for people like you.', `${BOOK_NAME} puts mindset, study method and test strategy into one plan you can start tonight.`],
   },
 };
@@ -65,13 +74,45 @@ const HUB_LINK: Partial<Record<Audience, [string, string]>> = {
   university: ['/for-college-students', 'More guides for college students'],
 };
 
+/** A small stand-in for the cover: the sales page has no cover image to reuse. */
+function MiniCover() {
+  return (
+    <div className="mini-cover" aria-hidden="true" lang="en">
+      <span className="mini-cover-title">How to Win at Mathematics</span>
+      <span className="mini-cover-author">Sahil Bora</span>
+    </div>
+  );
+}
+
+/** Compact book card shown after the intro, before the first heading. */
+function CtaTop({ audience }: { audience: Audience }) {
+  const [title, text] = CTA[audience].top;
+  return (
+    <aside className="book-card" aria-label="The book behind this guide">
+      <MiniCover />
+      <div className="book-card-body">
+        <strong>{title}</strong>
+        <p>{text}</p>
+        <div className="book-card-actions">
+          <a href={BOOK_URL} className="btn-cta" data-cta="top">Get the $5 ebook</a>
+          <span className="book-card-facts">{BOOK_FACTS_LINE}</span>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
 function CtaMid({ audience }: { audience: Audience }) {
   const [title, text] = CTA[audience].mid;
   return (
     <div className="cta-box">
       <strong>{title}</strong>
       <p>{text}</p>
-      <a href={BOOK_URL} className="btn-cta">Get the $5 ebook</a>
+      <ul className="cta-inside">
+        {BOOK_INSIDE.map((item) => <li key={item}>{item}</li>)}
+      </ul>
+      <a href={BOOK_URL} className="btn-cta" data-cta="mid">Get the $5 ebook</a>
+      <p className="cta-facts">{BOOK_FACTS_LINE}</p>
     </div>
   );
 }
@@ -82,7 +123,8 @@ function CtaEnd({ audience }: { audience: Audience }) {
     <div className="cta-box cta-end">
       <strong>{title}</strong>
       <p>{text}</p>
-      <a href={BOOK_URL} className="btn-cta">Get Your Copy at HowToWinAtMath.com</a>
+      <a href={BOOK_URL} className="btn-cta" data-cta="end">Get the $5 ebook</a>
+      <p className="cta-facts">{BOOK_FACTS_LINE}</p>
     </div>
   );
 }
@@ -181,6 +223,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!post) notFound();
   const audience: Audience = post.audience ?? 'all';
   const hubLink = HUB_LINK[audience];
+
+  // Show the compact book card right after the intro: before the first heading,
+  // unless the post already puts its mid-article call to action there.
+  const firstH2 = post.content.findIndex((b) => b.type === 'h2');
+  const firstMid = post.content.findIndex((b) => b.type === 'cta-mid');
+  const topCardAt = firstH2 > 0 && (firstMid === -1 || firstMid > firstH2) ? firstH2 : -1;
 
   const related = getPostsByPillar(post.pillar)
     .filter((p) => p.slug !== post.slug)
@@ -300,7 +348,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <meta itemProp="headline" content={post.title} />
         <meta itemProp="description" content={post.metaDescription} />
         <div itemProp="articleBody">
-          {post.content.map((block, i) => renderBlock(block, i, audience))}
+          {post.content.map((block, i) =>
+            i === topCardAt ? (
+              <Fragment key={i}>
+                <CtaTop audience={audience} />
+                {renderBlock(block, i, audience)}
+              </Fragment>
+            ) : (
+              renderBlock(block, i, audience)
+            )
+          )}
         </div>
 
         {post.faq && post.faq.length > 0 && (
@@ -327,10 +384,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           <p>{AUTHOR.bio}</p>
 
-          <p>
-
+          <p className="author-bio-links">
+            <a href={BOOK_URL} data-cta="author-bio">Read {BOOK_NAME}, the $5 ebook →</a>
             <a href="/about">More about {AUTHOR.name}</a>
-
           </p>
 
         </aside>
@@ -350,6 +406,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         )}
       </article>
+      <StickyBookBar href={BOOK_URL} facts={BOOK_FACTS_SHORT} />
     </>
   );
 }
