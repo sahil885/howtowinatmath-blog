@@ -83,7 +83,7 @@ export const HUBS: Record<HubKey, Hub> = {
     ],
     startHere: ['how-to-pass-college-math', 'how-to-pass-calculus', 'college-algebra-help', 'how-to-pass-math-placement-test'],
     sections: [
-      { heading: 'Your courses', slugs: ['college-algebra-help', 'how-to-pass-calculus', 'how-to-pass-statistics', 'how-to-pass-precalculus', 'how-to-pass-trigonometry'] },
+      { heading: 'Your courses', slugs: ['college-algebra-help', 'how-to-pass-calculus', 'how-to-pass-calculus-2', 'how-to-pass-statistics', 'how-to-pass-precalculus', 'how-to-pass-trigonometry'] },
       { heading: 'Exams and grades', slugs: ['how-to-prepare-for-math-final-exam', 'how-to-stop-failing-math-tests', 'what-to-do-when-failing-math-class', 'how-to-get-better-at-math-fast'] },
       { heading: 'Coming back to math', slugs: ['how-to-pass-math-placement-test', 'how-to-improve-math-skills-as-adult', 'how-to-overcome-math-anxiety', 'what-science-says-about-being-bad-at-math'] },
       { heading: 'Studying on your own', slugs: ['how-to-pass-math-without-tutor', 'how-to-remember-math-formulas', 'math-study-guide-struggling-students'] },
